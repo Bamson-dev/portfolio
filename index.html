@@ -15,7 +15,7 @@
       --bg: #0a0a0a;
       --section: #0f0f0f;
       --card: #111111;
-      --border: rgba(255, 255, 255, 0.1);
+      --border: rgba(255, 255, 255, 0.06);
       --text: #f5f5f5;
       --muted: #999999;
       --accent: #d4e157;
@@ -64,10 +64,8 @@
       font-family: 'Satoshi', sans-serif;
       font-size: 12px;
       font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     /* Buttons */
@@ -277,30 +275,55 @@
       .hero-buttons { flex-direction: row; flex-wrap: wrap; }
     }
 
-    .hero-proof {
+    .hero-showcase {
+      position: relative;
+      height: 280px;
+      margin-top: 8px;
+    }
+    @media (min-width: 768px) {
+      .hero-showcase { height: 340px; }
+    }
+    .showcase-frame {
+      position: absolute;
       border: 1px solid var(--border);
-      border-radius: 4px;
+      border-radius: 3px;
       overflow: hidden;
       background: #0d0d0d;
     }
-    .hero-proof img {
+    .showcase-frame img {
       width: 100%;
-      aspect-ratio: 16/10;
+      height: 100%;
       object-fit: cover;
       object-position: top;
+      display: block;
     }
-    .hero-proof-cap {
-      padding: 10px 14px;
-      font-size: 12px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
+    .showcase-a {
+      width: 72%;
+      height: 58%;
+      left: 0;
+      top: 0;
+      z-index: 3;
+    }
+    .showcase-b {
+      width: 62%;
+      height: 52%;
+      right: 0;
+      top: 18%;
+      z-index: 2;
+      opacity: 0.92;
+    }
+    .showcase-c {
+      width: 55%;
+      height: 48%;
+      left: 14%;
+      bottom: 0;
+      z-index: 1;
+      opacity: 0.85;
     }
 
     /* Proof bar */
     .proof-bar {
-      padding: 48px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+      padding: 56px 0;
       background: var(--section);
     }
     .proof-grid {
@@ -378,8 +401,8 @@
     .about-copy p {
       font-size: 17px;
       color: var(--muted);
-      line-height: 1.85;
-      margin-bottom: 24px;
+      line-height: 1.8;
+      margin-bottom: 28px;
       max-width: var(--prose);
     }
     .about-copy p:last-child { margin-bottom: 0; }
@@ -387,26 +410,37 @@
     /* Projects */
     .work { background: var(--bg); }
     .projects-list { display: flex; flex-direction: column; gap: 48px; }
-    .project-card {
-      display: block;
-      border-top: 1px solid var(--border);
-      padding-top: 48px;
+    @media (min-width: 768px) {
+      .projects-list { gap: 56px; }
     }
-    .project-card:first-child { border-top: none; padding-top: 0; }
+    .project-card {
+      display: grid;
+      gap: 24px;
+      align-items: start;
+    }
+    @media (min-width: 768px) {
+      .project-card {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+    }
     .project-img {
       overflow: hidden;
       border: 1px solid var(--border);
-      border-radius: 4px;
-      margin-bottom: 24px;
+      border-radius: 3px;
       background: #0d0d0d;
     }
     .project-img img {
       width: 100%;
-      aspect-ratio: 16/9;
+      aspect-ratio: 16/10;
       object-fit: cover;
       object-position: top center;
     }
-    .project-body { max-width: var(--prose); }
+    @media (min-width: 768px) {
+      .project-img img { aspect-ratio: 4/3; }
+    }
+    .project-body { max-width: 420px; }
     .project-body h3 {
       font-family: 'Clash Display', sans-serif;
       font-weight: 600;
@@ -420,17 +454,17 @@
       line-height: 1.75;
       margin-bottom: 20px;
     }
-    .project-proof {
+    .project-metrics {
+      list-style: none;
+      margin-bottom: 24px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 16px 24px;
-      margin-bottom: 20px;
-      font-size: 13px;
-      color: var(--muted);
+      flex-direction: column;
+      gap: 6px;
     }
-    .project-proof span::before {
-      content: '✓ ';
-      color: var(--text);
+    .project-metrics li {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
     }
 
     /* Capabilities */
@@ -442,15 +476,12 @@
       max-width: var(--prose);
     }
     .cap-list {
-      margin-top: 40px;
+      margin-top: 48px;
       display: flex;
       flex-direction: column;
-      gap: 0;
-      border-top: 1px solid var(--border);
+      gap: 32px;
     }
     .cap-item {
-      padding: 28px 0;
-      border-bottom: 1px solid var(--border);
       display: grid;
       gap: 8px;
     }
@@ -472,23 +503,23 @@
     /* Process */
     .process { background: var(--bg); }
     .process-steps {
-      margin-top: 40px;
+      margin-top: 32px;
       max-width: var(--prose);
       display: flex;
       flex-direction: column;
-      gap: 36px;
+      gap: 28px;
     }
     .process-step h3 {
       font-family: 'Clash Display', sans-serif;
       font-weight: 600;
-      font-size: 20px;
-      margin-bottom: 10px;
+      font-size: 18px;
+      margin-bottom: 6px;
       letter-spacing: -0.02em;
     }
     .process-step p {
-      font-size: 17px;
+      font-size: 16px;
       color: var(--muted);
-      line-height: 1.8;
+      line-height: 1.7;
     }
 
     /* CTA */
@@ -513,9 +544,9 @@
     .cta p {
       font-size: 17px;
       color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 32px;
-      max-width: var(--prose);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 400px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -591,7 +622,8 @@
       .hero h1 { font-size: 32px; }
       .section-head h2 { font-size: 28px; }
       .hero-sub { font-size: 16px; }
-      .cta .btn-whatsapp { width: 100%; }
+      .cta .btn-whatsapp { width: 100%; font-size: 17px; padding: 18px 24px; }
+      .hero-showcase { height: 240px; }
       .about-photo { max-width: 100%; }
     }
   </style>
@@ -603,12 +635,12 @@
     <div class="nav-inner">
       <a href="#" class="logo">BM<span class="logo-dot">.</span></a>
       <ul class="nav-links">
+        <li><a href="#work">Products</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
         <li><a href="#process">Process</a></li>
       </ul>
-      <a href="#contact" class="btn btn-nav btn-nav-mobile nav-mob-cta">Book a Call</a>
-      <a href="#contact" class="btn btn-nav nav-desk-cta">Book a Call</a>
+      <a href="#contact" class="btn btn-nav btn-nav-mobile nav-mob-cta">Contact</a>
+      <a href="#contact" class="btn btn-nav nav-desk-cta">Contact</a>
     </div>
   </nav>
 
@@ -617,15 +649,21 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <h1 class="display">You have an idea.<br>I'll turn it into something real.</h1>
-          <p class="hero-sub">I help founders and businesses turn ideas into working products. From planning and design to launch, I build software people actually use.</p>
+          <p class="hero-sub">I build products for founders. Planning, design, payments, and launch.</p>
           <div class="hero-buttons">
             <a href="#work" class="btn btn-primary">View Products</a>
-            <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%27d%20like%20to%20book%20a%20call%20about%20a%20project." class="btn btn-secondary" target="_blank" rel="noopener">Book a Call</a>
           </div>
         </div>
-        <div class="hero-proof">
-          <img src="images/leadthur.png" alt="LeadThur product screenshot" width="600" height="375">
-          <div class="hero-proof-cap">LeadThur · live product · paying customers</div>
+        <div class="hero-showcase">
+          <div class="showcase-frame showcase-a">
+            <img src="images/leadthur.png" alt="LeadThur product preview" width="500" height="320">
+          </div>
+          <div class="showcase-frame showcase-b">
+            <img src="images/adanalyzer.png" alt="AdAnalyzer product preview" width="420" height="280">
+          </div>
+          <div class="showcase-frame showcase-c">
+            <img src="images/naira-invoice.png" alt="NairaInvoice product preview" width="380" height="250">
+          </div>
         </div>
       </div>
     </div>
@@ -635,12 +673,12 @@
     <div class="container">
       <div class="proof-grid reveal">
         <div>
-          <div class="proof-num">5+</div>
-          <div class="proof-label">Products Launched</div>
+          <div class="proof-num">$2M+</div>
+          <div class="proof-label">Revenue Processed</div>
         </div>
         <div>
-          <div class="proof-num">$2M+</div>
-          <div class="proof-label">Revenue Generated at PromptEarn</div>
+          <div class="proof-num">12+</div>
+          <div class="proof-label">Products Built</div>
         </div>
         <div>
           <div class="proof-num">50K+</div>
@@ -654,29 +692,10 @@
     </div>
   </div>
 
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid reveal">
-        <div class="about-photo">
-          <img src="images/hero.png" alt="Bamidele Matthew" width="240" height="320" loading="lazy">
-        </div>
-        <div class="about-copy">
-          <p class="label">Founder</p>
-          <h2 class="display">Bamidele Matthew</h2>
-          <p>Co-founder and CTO of PromptEarn. Built the platform and helped scale it to $2M in revenue within 12 months.</p>
-          <p>Since then I've launched LeadThur, NairaInvoice, AdAnalyzer, and other products used by real customers across Nigeria and international markets.</p>
-          <p>I build for business outcomes: users who stay, payments that work, and products that are ready to launch, not sit in development.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="work" id="work">
     <div class="container">
       <div class="section-head reveal">
-        <p class="label">Products</p>
-        <h2 class="display">Live software I've built.</h2>
-        <p class="section-note">Every product below is live and used by real customers.</p>
+        <h2 class="display">Products I've built and launched.</h2>
       </div>
 
       <div class="projects-list">
@@ -686,12 +705,12 @@
           </div>
           <div class="project-body">
             <h3>LeadThur</h3>
-            <p class="project-one-liner">Find 1,000+ real business leads in any city worldwide in under 60 seconds.</p>
-            <div class="project-proof">
-              <span>Live Product</span>
-              <span>Built From Scratch</span>
-              <span>Used By Real Customers</span>
-            </div>
+            <p class="project-one-liner">Lead generation software that finds 1,000+ businesses in any city in under 60 seconds.</p>
+            <ul class="project-metrics">
+              <li>1,000+ leads per search</li>
+              <li>195 countries supported</li>
+              <li>leadthur.com</li>
+            </ul>
             <span class="btn-site">View Product</span>
           </div>
         </a>
@@ -702,12 +721,12 @@
           </div>
           <div class="project-body">
             <h3>NairaInvoice</h3>
-            <p class="project-one-liner">Create and send professional invoices in under a minute, built for Nigerian businesses.</p>
-            <div class="project-proof">
-              <span>Live Product</span>
-              <span>Built From Scratch</span>
-              <span>Used By Real Customers</span>
-            </div>
+            <p class="project-one-liner">Invoicing software for Nigerian businesses to create and send invoices in under a minute.</p>
+            <ul class="project-metrics">
+              <li>Invoice in under 1 minute</li>
+              <li>5 invoice templates</li>
+              <li>Built for Nigerian businesses</li>
+            </ul>
             <span class="btn-site">View Product</span>
           </div>
         </a>
@@ -718,12 +737,12 @@
           </div>
           <div class="project-body">
             <h3>AdAnalyzer</h3>
-            <p class="project-one-liner">Paste your ad copy and get a full breakdown on what's hurting your reach before you spend money.</p>
-            <div class="project-proof">
-              <span>Live Product</span>
-              <span>Built From Scratch</span>
-              <span>Used By Real Customers</span>
-            </div>
+            <p class="project-one-liner">Checks your Facebook and Instagram ad copy before you spend money on ads.</p>
+            <ul class="project-metrics">
+              <li>Facebook and Instagram ads</li>
+              <li>Free to use</li>
+              <li>adanalyzer.pdigitalhq.com</li>
+            </ul>
             <span class="btn-site">View Product</span>
           </div>
         </a>
@@ -734,12 +753,12 @@
           </div>
           <div class="project-body">
             <h3>Claude Clone, Naija Edition</h3>
-            <p class="project-one-liner">An AI workspace with tools built for Nigerian business owners, from content to customer replies.</p>
-            <div class="project-proof">
-              <span>Live Product</span>
-              <span>Built From Scratch</span>
-              <span>Used By Real Customers</span>
-            </div>
+            <p class="project-one-liner">AI workspace for Nigerian business owners to write content and customer replies.</p>
+            <ul class="project-metrics">
+              <li>6 platform content tools</li>
+              <li>Customer reply assistant</li>
+              <li>Built for Nigerian businesses</li>
+            </ul>
             <span class="btn-site">View Product</span>
           </div>
         </a>
@@ -750,12 +769,12 @@
           </div>
           <div class="project-body">
             <h3>Adley</h3>
-            <p class="project-one-liner">A Telegram bot that tells you what to pause, scale, or fix in your ad campaigns.</p>
-            <div class="project-proof">
-              <span>Live Product</span>
-              <span>Built From Scratch</span>
-              <span>Used By Real Customers</span>
-            </div>
+            <p class="project-one-liner">Telegram bot that reads your ad reports and tells you what to pause or scale.</p>
+            <ul class="project-metrics">
+              <li>Runs on Telegram</li>
+              <li>Reads ad performance reports</li>
+              <li>Pause, scale, or fix recommendations</li>
+            </ul>
             <span class="btn-site">View Product</span>
           </div>
         </a>
@@ -766,12 +785,12 @@
           </div>
           <div class="project-body">
             <h3>AI Customer Support</h3>
-            <p class="project-one-liner">A full customer support channel with voice input, quick replies, and help center search.</p>
-            <div class="project-proof">
-              <span>Live Product</span>
-              <span>Built From Scratch</span>
-              <span>Used By Real Customers</span>
-            </div>
+            <p class="project-one-liner">Customer support software with chat, voice input, and help center search.</p>
+            <ul class="project-metrics">
+              <li>Chat and voice input</li>
+              <li>Help center search</li>
+              <li>Mobile-first design</li>
+            </ul>
             <span class="btn-site">View Product</span>
           </div>
         </a>
@@ -779,37 +798,51 @@
     </div>
   </section>
 
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid reveal">
+        <div class="about-photo">
+          <img src="images/hero.png" alt="Bamidele Matthew" width="240" height="320" loading="lazy">
+        </div>
+        <div class="about-copy">
+          <h2 class="display">Bamidele Matthew</h2>
+          <p>Co-founder and CTO of PromptEarn. Built the platform and helped scale it to $2M in revenue within 12 months.</p>
+          <p>Since then I've launched LeadThur, NairaInvoice, AdAnalyzer, and other products across Nigeria and international markets.</p>
+          <p>I build for outcomes: users who stay, payments that work, and products ready to launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="stack" id="stack">
     <div class="container">
       <div class="section-head reveal">
-        <p class="label">What I Handle</p>
         <h2 class="display">Everything needed to go from idea to launch.</h2>
-        <p class="stack-sub">Plain language. No jargon. You always know what's being built and why.</p>
       </div>
       <div class="cap-list">
         <div class="cap-item reveal">
           <h3>Planning</h3>
-          <p>We define what to build, who it's for, and what success looks like before any code is written.</p>
+          <p>Helping you figure out what needs to be built before spending money.</p>
         </div>
         <div class="cap-item reveal">
           <h3>Design</h3>
-          <p>Interfaces your customers can use immediately, especially on mobile.</p>
+          <p>Screens your customers can use on day one, especially on mobile.</p>
         </div>
         <div class="cap-item reveal">
           <h3>Build</h3>
-          <p>The full product: accounts, dashboards, payments, and everything behind the scenes.</p>
+          <p>The full product: sign-up, dashboards, payments, and admin tools.</p>
         </div>
         <div class="cap-item reveal">
           <h3>Payments</h3>
-          <p>Paystack, Flutterwave, and international payment options wired up properly for your market.</p>
+          <p>Paystack, Flutterwave, and international gateways set up for your market.</p>
         </div>
         <div class="cap-item reveal">
           <h3>Launch</h3>
-          <p>Your product goes live on real servers. You get full access and ownership from day one.</p>
+          <p>Your product goes live. You own everything from day one.</p>
         </div>
         <div class="cap-item reveal">
           <h3>Platform Setup</h3>
-          <p>Hosting, email, WhatsApp flows, and the systems that keep your product running after launch.</p>
+          <p>Setting up the systems your product needs to run smoothly after launch.</p>
         </div>
       </div>
     </div>
@@ -818,21 +851,20 @@
   <section class="process" id="process">
     <div class="container">
       <div class="section-head reveal">
-        <p class="label">Process</p>
         <h2 class="display">Three steps. That's it.</h2>
       </div>
       <div class="process-steps">
         <div class="process-step reveal">
-          <h3>Step 1 — Tell me about your idea.</h3>
-          <p>One conversation. You explain the problem. I ask the questions that matter for your business.</p>
+          <h3>Step 1</h3>
+          <p>Tell me about your idea.</p>
         </div>
         <div class="process-step reveal">
-          <h3>Step 2 — I create a plan and show you exactly what needs to be built.</h3>
-          <p>You get a clear scope, timeline, and weekly updates while I build.</p>
+          <h3>Step 2</h3>
+          <p>I create a clear plan.</p>
         </div>
         <div class="process-step reveal">
-          <h3>Step 3 — I build it and help you launch.</h3>
-          <p>Your product goes live. You own everything. I'm available if you need support after.</p>
+          <h3>Step 3</h3>
+          <p>I build and launch it.</p>
         </div>
       </div>
     </div>
@@ -842,7 +874,7 @@
     <div class="container">
       <div class="cta-inner reveal">
         <h2 class="display">Ready to build something real?</h2>
-        <p>Tell me about your idea and I'll show you the fastest path to launch.</p>
+        <p>Message me on WhatsApp. Tell me about your idea.</p>
         <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20my%20project." class="btn btn-whatsapp" target="_blank" rel="noopener">
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Send Me a Message on WhatsApp
