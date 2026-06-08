@@ -64,7 +64,9 @@
       font-family: 'Satoshi', sans-serif;
       font-size: 12px;
       font-weight: 500;
-      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
       margin-bottom: 16px;
     }
 
@@ -258,13 +260,17 @@
     }
 
     .hero-sub {
-      font-weight: 400;
+      margin-bottom: 36px;
+      max-width: 500px;
+    }
+    .hero-sub p {
+      font-weight: 300;
       color: var(--muted);
       font-size: 17px;
       line-height: 1.8;
-      max-width: var(--prose);
-      margin-bottom: 36px;
+      margin-bottom: 16px;
     }
+    .hero-sub p:last-child { margin-bottom: 0; }
 
     .hero-buttons {
       display: flex;
@@ -366,46 +372,67 @@
     }
     .section-note {
       font-size: 16px;
+      font-weight: 300;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.85;
     }
 
     /* About */
     .about { background: var(--section); }
     .about-grid {
       display: grid;
-      gap: 40px;
+      gap: 48px;
       align-items: start;
     }
-    @media (min-width: 768px) {
-      .about-grid { grid-template-columns: 240px 1fr; gap: 56px; }
-    }
-    .about-photo {
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-      aspect-ratio: 3/4;
-      max-width: 240px;
-    }
-    .about-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
+    @media (min-width: 900px) {
+      .about-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
     }
     .about-copy h2 {
       font-size: 32px;
       margin-bottom: 28px;
       line-height: 1.12;
     }
+    @media (min-width: 768px) {
+      .about-copy h2 { font-size: 40px; }
+    }
     .about-copy p {
-      font-size: 17px;
+      font-size: 16px;
+      font-weight: 300;
       color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 28px;
-      max-width: var(--prose);
+      line-height: 1.85;
+      margin-bottom: 24px;
+      max-width: 500px;
     }
     .about-copy p:last-child { margin-bottom: 0; }
+    .about-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .about-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--card);
+    }
+    .about-card-icon {
+      font-size: 20px;
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+    .about-card h3 {
+      font-family: 'Satoshi', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .about-card p {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
+    }
 
     /* Projects */
     .work { background: var(--bg); }
@@ -467,59 +494,27 @@
       line-height: 1.5;
     }
 
-    /* Capabilities */
-    .stack { background: var(--section); }
-    .stack-sub {
-      font-size: 17px;
-      color: var(--muted);
-      line-height: 1.75;
-      max-width: var(--prose);
-    }
-    .cap-list {
-      margin-top: 48px;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-    .cap-item {
-      display: grid;
-      gap: 8px;
-    }
-    @media (min-width: 700px) {
-      .cap-item { grid-template-columns: 180px 1fr; gap: 32px; align-items: start; }
-    }
-    .cap-item h3 {
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 600;
-      font-size: 16px;
-    }
-    .cap-item p {
-      font-size: 16px;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 560px;
-    }
-
     /* Process */
     .process { background: var(--bg); }
     .process-steps {
       margin-top: 32px;
-      max-width: var(--prose);
+      max-width: 640px;
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 40px;
     }
     .process-step h3 {
       font-family: 'Clash Display', sans-serif;
       font-weight: 600;
       font-size: 18px;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
       letter-spacing: -0.02em;
     }
     .process-step p {
       font-size: 16px;
+      font-weight: 300;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.85;
     }
 
     /* CTA */
@@ -543,10 +538,11 @@
     }
     .cta p {
       font-size: 17px;
+      font-weight: 300;
       color: var(--muted);
-      line-height: 1.75;
+      line-height: 1.85;
       margin-bottom: 36px;
-      max-width: 400px;
+      max-width: 520px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -622,9 +618,9 @@
       .hero h1 { font-size: 32px; }
       .section-head h2 { font-size: 28px; }
       .hero-sub { font-size: 16px; }
+      .hero-buttons .btn-whatsapp,
       .cta .btn-whatsapp { width: 100%; font-size: 17px; padding: 18px 24px; }
       .hero-showcase { height: 240px; }
-      .about-photo { max-width: 100%; }
     }
   </style>
 </head>
@@ -635,12 +631,12 @@
     <div class="nav-inner">
       <a href="#" class="logo">BM<span class="logo-dot">.</span></a>
       <ul class="nav-links">
-        <li><a href="#work">Products</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#work">Products</a></li>
         <li><a href="#process">Process</a></li>
       </ul>
-      <a href="#contact" class="btn btn-nav btn-nav-mobile nav-mob-cta">Contact</a>
-      <a href="#contact" class="btn btn-nav nav-desk-cta">Contact</a>
+      <a href="#contact" class="btn btn-nav btn-nav-mobile nav-mob-cta">Start a Project</a>
+      <a href="#contact" class="btn btn-nav nav-desk-cta">Start a Project</a>
     </div>
   </nav>
 
@@ -649,9 +645,14 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <h1 class="display">You have an idea.<br>I'll turn it into something real.</h1>
-          <p class="hero-sub">I build products for founders. Planning, design, payments, and launch.</p>
+          <div class="hero-sub">
+            <p>I've been on the founder side, so I know what it actually costs when the person building your product doesn't understand your business.</p>
+            <p>I've built and shipped products that real people pay for, across Africa and internationally, and I've done it as both the person writing the code and the person responsible for whether it works as a business.</p>
+            <p>That's a different thing from hiring a developer.</p>
+          </div>
           <div class="hero-buttons">
-            <a href="#work" class="btn btn-primary">View Products</a>
+            <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%20came%20across%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project." class="btn btn-whatsapp" target="_blank" rel="noopener">Let's Talk on WhatsApp</a>
+            <a href="#work" class="btn btn-secondary">See the work</a>
           </div>
         </div>
         <div class="hero-showcase">
@@ -673,29 +674,61 @@
     <div class="container">
       <div class="proof-grid reveal">
         <div>
-          <div class="proof-num">$2M+</div>
-          <div class="proof-label">Revenue Processed</div>
+          <div class="proof-num">100K+</div>
+          <div class="proof-label">Affiliates on PromptEarn</div>
         </div>
         <div>
-          <div class="proof-num">12+</div>
-          <div class="proof-label">Products Built</div>
+          <div class="proof-num">6+</div>
+          <div class="proof-label">Products shipped live</div>
         </div>
         <div>
-          <div class="proof-num">50K+</div>
-          <div class="proof-label">Users Reached</div>
+          <div class="proof-num">195</div>
+          <div class="proof-label">Countries LeadThur operates in</div>
         </div>
         <div>
           <div class="proof-num">3+</div>
-          <div class="proof-label">Years Building Products</div>
+          <div class="proof-label">Years building products</div>
         </div>
       </div>
     </div>
   </div>
 
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid reveal">
+        <div class="about-copy">
+          <p class="label">About</p>
+          <h2 class="display">I build products,<br>and I understand<br>what they need to earn.</h2>
+          <p>Most developers are good at writing code, and that's where it ends for them. I got into building because I was a founder first — I needed things built, I saw how badly it could go when the builder didn't understand the business, and I decided to become the kind of person who could do both.</p>
+          <p>At PromptEarn, I was Co-Founder and CTO, I built the platform from the ground up, helped grow it to over 100,000 affiliates, and was responsible for every technical decision that affected whether the business worked. That experience changed how I think about every product I build — I'm always thinking about the user, the conversion, the payment flow, and what happens after someone signs up, not just whether the code runs.</p>
+          <p>The products below were all built to solve real problems for real people, some of them for clients, some of them as my own ventures, all of them live and working. That's the standard I hold every project to.</p>
+        </div>
+        <div class="about-cards">
+          <div class="about-card">
+            <div class="about-card-icon">⚡</div>
+            <h3>I move fast without breaking things</h3>
+            <p>A production-ready product typically takes me 4 to 6 weeks, that includes the design, the backend, the payments, the deployment, everything — not a prototype, a real product people can pay for and use.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">🧠</div>
+            <h3>I think about what comes after launch</h3>
+            <p>Affiliate systems, onboarding flows, admin dashboards, automated emails — I build these because I've seen what happens to products that launch without them, and it's not pretty.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">🤝</div>
+            <h3>You stay in the loop the whole time</h3>
+            <p>Weekly updates, always reachable, and when I say something will be done, it will be done — I've worked with enough founders to know that the communication matters as much as the code.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="work" id="work">
     <div class="container">
       <div class="section-head reveal">
-        <h2 class="display">Products I've built and launched.</h2>
+        <h2 class="display">Products I've built<br>and shipped.</h2>
+        <p class="section-note">Some of these are products I built for the market, some were built for specific clients and use cases, all of them are live and working right now.</p>
       </div>
 
       <div class="projects-list">
@@ -705,7 +738,7 @@
           </div>
           <div class="project-body">
             <h3>LeadThur</h3>
-            <p class="project-one-liner">Lead generation software that finds 1,000+ businesses in any city in under 60 seconds.</p>
+            <p class="project-one-liner">Built for freelancers, agency owners, and digital marketers who need verified business contacts fast.</p>
             <ul class="project-metrics">
               <li>1,000+ leads per search</li>
               <li>195 countries supported</li>
@@ -721,7 +754,7 @@
           </div>
           <div class="project-body">
             <h3>NairaInvoice</h3>
-            <p class="project-one-liner">Invoicing software for Nigerian businesses to create and send invoices in under a minute.</p>
+            <p class="project-one-liner">Built for Nigerian freelancers and service businesses who needed a faster, more professional way to invoice and get paid without the back-and-forth.</p>
             <ul class="project-metrics">
               <li>Invoice in under 1 minute</li>
               <li>5 invoice templates</li>
@@ -737,7 +770,7 @@
           </div>
           <div class="project-body">
             <h3>AdAnalyzer</h3>
-            <p class="project-one-liner">Checks your Facebook and Instagram ad copy before you spend money on ads.</p>
+            <p class="project-one-liner">Built for business owners running their own Facebook and Instagram ads who kept spending money on campaigns that didn't work and had no way to know why before it was too late.</p>
             <ul class="project-metrics">
               <li>Facebook and Instagram ads</li>
               <li>Free to use</li>
@@ -749,15 +782,15 @@
 
         <a href="https://claude-clone-62wr.onrender.com/" class="project-card reveal" target="_blank" rel="noopener">
           <div class="project-img">
-            <img src="images/claude-clone.png" alt="Claude Clone Naija Edition" loading="lazy">
+            <img src="images/claude-clone.png" alt="Naija AI Assistant" loading="lazy">
           </div>
           <div class="project-body">
-            <h3>Claude Clone, Naija Edition</h3>
-            <p class="project-one-liner">AI workspace for Nigerian business owners to write content and customer replies.</p>
+            <h3>Naija AI Assistant</h3>
+            <p class="project-one-liner">An AI productivity tool built specifically for Nigerian business owners, with features that don't exist on any mainstream AI platform — a WhatsApp reply generator, a Naija content engine that writes platform-ready posts for six channels at once, and a mode that responds with full Nigerian market and cultural context.</p>
             <ul class="project-metrics">
-              <li>6 platform content tools</li>
-              <li>Customer reply assistant</li>
-              <li>Built for Nigerian businesses</li>
+              <li>WhatsApp reply generator</li>
+              <li>6-channel content engine</li>
+              <li>Nigerian market context mode</li>
             </ul>
             <span class="btn-site">View Product</span>
           </div>
@@ -769,7 +802,7 @@
           </div>
           <div class="project-body">
             <h3>Adley</h3>
-            <p class="project-one-liner">Telegram bot that reads your ad reports and tells you what to pause or scale.</p>
+            <p class="project-one-liner">Built for media buyers and business owners running Meta ads who needed a faster way to read their campaign data and make decisions without hiring an analyst.</p>
             <ul class="project-metrics">
               <li>Runs on Telegram</li>
               <li>Reads ad performance reports</li>
@@ -784,66 +817,16 @@
             <img src="images/ai-support.png" alt="AI Customer Support" loading="lazy">
           </div>
           <div class="project-body">
-            <h3>AI Customer Support</h3>
-            <p class="project-one-liner">Customer support software with chat, voice input, and help center search.</p>
+            <h3>AI Customer Support Chatbot</h3>
+            <p class="project-one-liner">A custom AI-powered support interface built for a client who needed a professional, always-on support channel without the cost of a full support team. Voice input, smart quick replies, help center search, and full mobile support.</p>
             <ul class="project-metrics">
-              <li>Chat and voice input</li>
-              <li>Help center search</li>
-              <li>Mobile-first design</li>
+              <li>Built for a client</li>
+              <li>Voice input and quick replies</li>
+              <li>Full mobile support</li>
             </ul>
             <span class="btn-site">View Product</span>
           </div>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid reveal">
-        <div class="about-photo">
-          <img src="images/hero.png" alt="Bamidele Matthew" width="240" height="320" loading="lazy">
-        </div>
-        <div class="about-copy">
-          <h2 class="display">Bamidele Matthew</h2>
-          <p>Co-founder and CTO of PromptEarn. Built the platform and helped scale it to $2M in revenue within 12 months.</p>
-          <p>Since then I've launched LeadThur, NairaInvoice, AdAnalyzer, and other products across Nigeria and international markets.</p>
-          <p>I build for outcomes: users who stay, payments that work, and products ready to launch.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="stack" id="stack">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2 class="display">Everything needed to go from idea to launch.</h2>
-      </div>
-      <div class="cap-list">
-        <div class="cap-item reveal">
-          <h3>Planning</h3>
-          <p>Helping you figure out what needs to be built before spending money.</p>
-        </div>
-        <div class="cap-item reveal">
-          <h3>Design</h3>
-          <p>Screens your customers can use on day one, especially on mobile.</p>
-        </div>
-        <div class="cap-item reveal">
-          <h3>Build</h3>
-          <p>The full product: sign-up, dashboards, payments, and admin tools.</p>
-        </div>
-        <div class="cap-item reveal">
-          <h3>Payments</h3>
-          <p>Paystack, Flutterwave, and international gateways set up for your market.</p>
-        </div>
-        <div class="cap-item reveal">
-          <h3>Launch</h3>
-          <p>Your product goes live. You own everything from day one.</p>
-        </div>
-        <div class="cap-item reveal">
-          <h3>Platform Setup</h3>
-          <p>Setting up the systems your product needs to run smoothly after launch.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -855,16 +838,16 @@
       </div>
       <div class="process-steps">
         <div class="process-step reveal">
-          <h3>Step 1</h3>
-          <p>Tell me about your idea.</p>
+          <h3>Step 1 — We have one real conversation</h3>
+          <p>You tell me about the product, I ask the questions that help me understand the business behind it — who it's for, what it needs them to do, what success actually looks like in six months, not just at launch. One call is usually enough to know if we are a fit and roughly what it will take to build it properly.</p>
         </div>
         <div class="process-step reveal">
-          <h3>Step 2</h3>
-          <p>I create a clear plan.</p>
+          <h3>Step 2 — I build it and keep you in the loop</h3>
+          <p>I take full ownership of the build — design, frontend, backend, database, payments, deployment, all of it — so you are not coordinating between three different people who don't talk to each other. You get a clear update every single week, you can always reach me, and nothing about the progress is ever a mystery.</p>
         </div>
         <div class="process-step reveal">
-          <h3>Step 3</h3>
-          <p>I build and launch it.</p>
+          <h3>Step 3 — You launch with full ownership</h3>
+          <p>When it goes live, everything is yours — the codebase, the servers, the documentation, the logins. No lock-in, no "only I can maintain this," no monthly retainer you never agreed to. If you want me to stay involved after launch to support growth or add features, that conversation is always available, but it is never forced.</p>
         </div>
       </div>
     </div>
@@ -873,8 +856,8 @@
   <section class="cta" id="contact">
     <div class="container">
       <div class="cta-inner reveal">
-        <h2 class="display">Ready to build something real?</h2>
-        <p>Message me on WhatsApp. Tell me about your idea.</p>
+        <h2 class="display">If you have a product<br>that needs building,<br>let's talk.</h2>
+        <p>I work with founders and businesses who have a clear idea, need someone they can trust to build it properly, and are ready to move. If that describes where you are right now, send me a message and we'll figure out in one conversation whether this is a fit.</p>
         <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20my%20project." class="btn btn-whatsapp" target="_blank" rel="noopener">
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Send Me a Message on WhatsApp
