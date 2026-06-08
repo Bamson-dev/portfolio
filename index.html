@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bamidele Matthew | SaaS Builder</title>
+  <title>Bamidele Matthew · Product Builder</title>
   <meta name="description" content="Bamidele Matthew builds MVPs and SaaS products for founders. Co-founder and CTO at PromptEarn. Lagos, Nigeria.">
   <meta name="deploy" content="vercel">
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
@@ -15,12 +15,13 @@
       --bg: #0a0a0a;
       --section: #0f0f0f;
       --card: #111111;
-      --border: rgba(255, 255, 255, 0.08);
-      --text: #f4f4f5;
-      --muted: #a1a1aa;
+      --border: rgba(255, 255, 255, 0.1);
+      --text: #f5f5f5;
+      --muted: #999999;
+      --accent: #d4e157;
       --whatsapp: #25D366;
       --max-w: 1080px;
-      --prose: 42ch;
+      --prose: 520px;
     }
 
     html {
@@ -78,7 +79,7 @@
       font-family: 'Satoshi', sans-serif;
       border: none;
       cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+      transition: opacity 0.2s ease, border-color 0.2s ease, color 0.2s ease;
       width: 100%;
     }
 
@@ -92,14 +93,14 @@
       font-weight: 600;
       font-size: 15px;
       padding: 14px 24px;
-      border-radius: 4px;
+      border-radius: 3px;
       min-height: 48px;
     }
     .btn-primary:hover { opacity: 0.9; }
 
     .btn-secondary {
       background: transparent;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       color: var(--muted);
       font-size: 14px;
       font-weight: 500;
@@ -107,7 +108,10 @@
       border-radius: 4px;
       min-height: 48px;
     }
-    .btn-secondary:hover { color: var(--text); border-color: rgba(255,255,255,0.18); }
+    .btn-secondary:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      color: var(--text);
+    }
 
     .btn-nav {
       background: var(--text);
@@ -115,7 +119,7 @@
       font-weight: 600;
       font-size: 13px;
       padding: 10px 18px;
-      border-radius: 4px;
+      border-radius: 3px;
       min-height: 44px;
       width: auto;
     }
@@ -129,29 +133,30 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      color: var(--text);
+      border-bottom: 1px solid var(--text);
       font-family: 'Satoshi', sans-serif;
       font-weight: 600;
       font-size: 14px;
-      color: var(--text);
-      min-height: 44px;
+      padding: 0 0 2px;
+      min-height: auto;
       width: fit-content;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 2px;
+      border-radius: 0;
+      background: none;
     }
-    .btn-site:hover { border-color: var(--text); }
+    .btn-site:hover { opacity: 0.7; }
 
     .btn-whatsapp {
       background: var(--whatsapp);
       color: #fff;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 16px;
-      padding: 16px 28px;
+      padding: 16px 20px;
       border-radius: 4px;
       min-height: 48px;
-      width: 100%;
     }
     @media (min-width: 768px) {
-      .btn-whatsapp { padding: 16px 36px; width: auto; }
+      .btn-whatsapp { padding: 16px 32px; }
     }
     .btn-whatsapp:hover { opacity: 0.92; }
 
@@ -165,7 +170,7 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(10, 10, 10, 0.96);
+      background: var(--bg);
       border-bottom: 1px solid var(--border);
     }
     .nav-inner {
@@ -220,40 +225,38 @@
 
     /* Hero */
     .hero {
-      padding-top: calc(72px + 32px);
-      padding-bottom: 64px;
+      padding-top: calc(64px + 48px);
+      padding-bottom: 56px;
     }
     @media (min-width: 768px) {
       .hero {
-        padding-top: calc(88px + 60px);
-        padding-bottom: 100px;
+        padding-top: calc(64px + 80px);
+        padding-bottom: 72px;
       }
     }
 
-    .hero-copy-wrap {
-      padding: 0 20px;
+    .hero-grid {
+      display: grid;
+      gap: 40px;
+      align-items: start;
     }
     @media (min-width: 768px) {
-      .hero-copy-wrap { padding: 0; }
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: center;
+      }
     }
 
-    .hero-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    @media (min-width: 768px) {
-      .hero-inner { padding: 0 48px; }
-    }
-
-    .hero-copy { max-width: 640px; }
+    .hero-copy { max-width: var(--prose); }
 
     .hero h1 {
       font-size: 36px;
       margin-bottom: 28px;
+      line-height: 1.08;
     }
     @media (min-width: 768px) {
-      .hero h1 { font-size: 56px; }
+      .hero h1 { font-size: 52px; }
     }
 
     .hero-sub {
@@ -264,45 +267,38 @@
       max-width: var(--prose);
       margin-bottom: 36px;
     }
-    @media (min-width: 768px) {
-      .hero-sub { font-size: 18px; }
-    }
 
     .hero-buttons {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 48px;
     }
     @media (min-width: 540px) {
-      .hero-buttons { flex-direction: row; flex-wrap: wrap; gap: 12px; }
+      .hero-buttons { flex-direction: row; flex-wrap: wrap; }
     }
 
     .hero-proof {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      border-top: 1px solid var(--border);
-      padding-top: 32px;
-    }
-    @media (min-width: 768px) { .hero-proof { gap: 16px; } }
-    .hero-proof a {
       border: 1px solid var(--border);
       border-radius: 4px;
       overflow: hidden;
-      transition: border-color 0.2s;
+      background: #0d0d0d;
     }
-    .hero-proof a:hover { border-color: rgba(255,255,255,0.16); }
     .hero-proof img {
       width: 100%;
       aspect-ratio: 16/10;
       object-fit: cover;
       object-position: top;
     }
+    .hero-proof-cap {
+      padding: 10px 14px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
 
-    /* Proof metrics */
+    /* Proof bar */
     .proof-bar {
-      padding: 56px 0;
+      padding: 48px 0;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       background: var(--section);
@@ -312,7 +308,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 32px 24px;
     }
-    @media (min-width: 768px) {
+    @media (min-width: 700px) {
       .proof-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
     }
     .proof-num {
@@ -336,20 +332,19 @@
       section { padding: 96px 0; }
     }
 
-    .section-head { margin-bottom: 48px; }
+    .section-head { margin-bottom: 48px; max-width: var(--prose); }
     .section-head h2 {
       font-size: 32px;
-      max-width: 16ch;
       line-height: 1.12;
+      margin-bottom: 12px;
     }
     @media (min-width: 768px) {
-      .section-head h2 { font-size: 44px; }
+      .section-head h2 { font-size: 40px; }
     }
     .section-note {
-      font-size: 14px;
-      font-weight: 300;
+      font-size: 16px;
       color: var(--muted);
-      margin-top: 12px;
+      line-height: 1.7;
     }
 
     /* About */
@@ -360,122 +355,97 @@
       align-items: start;
     }
     @media (min-width: 768px) {
-      .about-grid { grid-template-columns: 200px 1fr; gap: 56px; }
+      .about-grid { grid-template-columns: 240px 1fr; gap: 56px; }
     }
     .about-photo {
+      border: 1px solid var(--border);
       border-radius: 4px;
       overflow: hidden;
-      border: 1px solid var(--border);
-      max-width: 200px;
+      aspect-ratio: 3/4;
+      max-width: 240px;
     }
     .about-photo img {
       width: 100%;
-      aspect-ratio: 4/5;
+      height: 100%;
       object-fit: cover;
       object-position: top;
-      filter: grayscale(15%);
+    }
+    .about-copy h2 {
+      font-size: 32px;
+      margin-bottom: 28px;
+      line-height: 1.12;
     }
     .about-copy p {
-      font-weight: 400;
-      font-size: 16px;
+      font-size: 17px;
       color: var(--muted);
       line-height: 1.85;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       max-width: var(--prose);
     }
     .about-copy p:last-child { margin-bottom: 0; }
 
     /* Projects */
     .work { background: var(--bg); }
-    .project-featured,
+    .projects-list { display: flex; flex-direction: column; gap: 48px; }
     .project-card {
       display: block;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-      background: var(--card);
-      margin-bottom: 24px;
+      border-top: 1px solid var(--border);
+      padding-top: 48px;
     }
-    .project-card:last-child { margin-bottom: 0; }
+    .project-card:first-child { border-top: none; padding-top: 0; }
     .project-img {
       overflow: hidden;
-      border-bottom: 1px solid var(--border);
-    }
-    .project-featured .project-img { height: 240px; }
-    @media (min-width: 768px) {
-      .project-featured .project-img { height: 420px; }
-    }
-    .project-card .project-img { height: 200px; }
-    @media (min-width: 768px) {
-      .project-card .project-img { height: 280px; }
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      margin-bottom: 24px;
+      background: #0d0d0d;
     }
     .project-img img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 16/9;
       object-fit: cover;
       object-position: top center;
     }
-    .project-body { padding: 24px 24px 28px; }
+    .project-body { max-width: var(--prose); }
     .project-body h3 {
       font-family: 'Clash Display', sans-serif;
       font-weight: 600;
-      font-size: 20px;
-      margin-bottom: 10px;
+      font-size: 24px;
+      margin-bottom: 12px;
       letter-spacing: -0.02em;
     }
-    .project-oneliner {
-      font-size: 15px;
+    .project-one-liner {
+      font-size: 17px;
       color: var(--muted);
-      line-height: 1.65;
-      margin-bottom: 18px;
-      max-width: 48ch;
-    }
-    .project-proofs {
-      list-style: none;
+      line-height: 1.75;
       margin-bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
     }
-    .project-proofs li {
+    .project-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      margin-bottom: 20px;
       font-size: 13px;
       color: var(--muted);
-      padding-left: 16px;
-      position: relative;
     }
-    .project-proofs li::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 8px;
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--text);
-      opacity: 0.4;
+    .project-proof span::before {
+      content: '✓ ';
+      color: var(--text);
     }
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    @media (min-width: 768px) {
-      .projects-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
-    }
+
     /* Capabilities */
     .stack { background: var(--section); }
     .stack-sub {
-      font-weight: 300;
-      font-size: 16px;
+      font-size: 17px;
       color: var(--muted);
-      line-height: 1.7;
-      max-width: 480px;
-      margin-top: 12px;
+      line-height: 1.75;
+      max-width: var(--prose);
     }
     .cap-list {
       margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
       border-top: 1px solid var(--border);
     }
     .cap-item {
@@ -484,8 +454,8 @@
       display: grid;
       gap: 8px;
     }
-    @media (min-width: 768px) {
-      .cap-item { grid-template-columns: 200px 1fr; gap: 40px; align-items: start; }
+    @media (min-width: 700px) {
+      .cap-item { grid-template-columns: 180px 1fr; gap: 32px; align-items: start; }
     }
     .cap-item h3 {
       font-family: 'Satoshi', sans-serif;
@@ -493,30 +463,20 @@
       font-size: 16px;
     }
     .cap-item p {
-      font-weight: 400;
-      font-size: 15px;
+      font-size: 16px;
       color: var(--muted);
       line-height: 1.7;
-      max-width: 52ch;
+      max-width: 560px;
     }
 
     /* Process */
     .process { background: var(--bg); }
-    .process-sub {
-      font-weight: 300;
-      font-size: 16px;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 520px;
-      margin-top: 12px;
-    }
     .process-steps {
       margin-top: 40px;
-      border-top: 1px solid var(--border);
-    }
-    .process-step {
-      padding: 32px 0;
-      border-bottom: 1px solid var(--border);
+      max-width: var(--prose);
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
     }
     .process-step h3 {
       font-family: 'Clash Display', sans-serif;
@@ -526,11 +486,9 @@
       letter-spacing: -0.02em;
     }
     .process-step p {
-      font-weight: 400;
-      font-size: 16px;
+      font-size: 17px;
       color: var(--muted);
-      line-height: 1.75;
-      max-width: var(--prose);
+      line-height: 1.8;
     }
 
     /* CTA */
@@ -545,21 +503,21 @@
       margin: 0 auto;
     }
     .cta h2 {
-      font-size: 36px;
-      margin-bottom: 24px;
+      font-size: 32px;
+      margin-bottom: 20px;
+      line-height: 1.12;
     }
     @media (min-width: 768px) {
-      .cta h2 { font-size: 56px; }
+      .cta h2 { font-size: 40px; }
     }
     .cta p {
-      font-weight: 300;
-      font-size: 16px;
+      font-size: 17px;
       color: var(--muted);
       line-height: 1.8;
       margin-bottom: 32px;
-    }
-    @media (min-width: 768px) {
-      .cta p { font-size: 17px; }
+      max-width: var(--prose);
+      margin-left: auto;
+      margin-right: auto;
     }
     .cta-note {
       margin-top: 18px;
@@ -623,27 +581,18 @@
       color: var(--muted);
     }
 
-    /* Scroll reveal */
     .reveal {
       opacity: 0;
       transition: opacity 0.5s ease;
     }
     .reveal.visible { opacity: 1; }
-    .reveal-d1 { transition-delay: 0.1s; }
-    .reveal-d2 { transition-delay: 0.2s; }
-    .reveal-d3 { transition-delay: 0.3s; }
 
     @media (max-width: 767px) {
       .hero h1 { font-size: 32px; }
       .section-head h2 { font-size: 28px; }
-      .about-copy h2 { font-size: 28px; }
       .hero-sub { font-size: 16px; }
-      .project-body { padding: 20px; }
-      .project-featured .project-img { height: 220px; }
-      .cta { text-align: center; }
-      .cta h2 { font-size: 32px; }
-      .footer-inner { gap: 16px; }
-      .about-photo { max-width: 140px; }
+      .cta .btn-whatsapp { width: 100%; }
+      .about-photo { max-width: 100%; }
     }
   </style>
 </head>
@@ -658,24 +607,25 @@
         <li><a href="#work">Work</a></li>
         <li><a href="#process">Process</a></li>
       </ul>
-      <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20work%20with%20you." class="btn btn-nav btn-nav-mobile nav-mob-cta" target="_blank" rel="noopener">Let's Talk</a>
-      <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20work%20with%20you." class="btn btn-nav nav-desk-cta" target="_blank" rel="noopener">Start a Project</a>
+      <a href="#contact" class="btn btn-nav btn-nav-mobile nav-mob-cta">Book a Call</a>
+      <a href="#contact" class="btn btn-nav nav-desk-cta">Book a Call</a>
     </div>
   </nav>
 
   <section class="hero" id="hero">
-    <div class="hero-inner">
-      <div class="hero-copy reveal">
-        <h1 class="display">You have an idea.<br>I'll turn it into something real.</h1>
-        <p class="hero-sub">I help founders and businesses turn ideas into working products. From planning and design to launch, I build software people actually use.</p>
-        <div class="hero-buttons">
-          <a href="#work" class="btn btn-primary">View Products</a>
-          <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%27d%20like%20to%20book%20a%20call%20about%20a%20project." class="btn btn-secondary" target="_blank" rel="noopener">Book a Call</a>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 class="display">You have an idea.<br>I'll turn it into something real.</h1>
+          <p class="hero-sub">I help founders and businesses turn ideas into working products. From planning and design to launch, I build software people actually use.</p>
+          <div class="hero-buttons">
+            <a href="#work" class="btn btn-primary">View Products</a>
+            <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%27d%20like%20to%20book%20a%20call%20about%20a%20project." class="btn btn-secondary" target="_blank" rel="noopener">Book a Call</a>
+          </div>
         </div>
-        <div class="hero-proof reveal">
-          <a href="https://www.leadthur.com" target="_blank" rel="noopener"><img src="images/leadthur.png" alt="LeadThur" loading="lazy"></a>
-          <a href="https://naira-invoice.onrender.com/" target="_blank" rel="noopener"><img src="images/naira-invoice.png" alt="NairaInvoice" loading="lazy"></a>
-          <a href="https://adanalyzer.pdigitalhq.com/" target="_blank" rel="noopener"><img src="images/adanalyzer.png" alt="AdAnalyzer" loading="lazy"></a>
+        <div class="hero-proof">
+          <img src="images/leadthur.png" alt="LeadThur product screenshot" width="600" height="375">
+          <div class="hero-proof-cap">LeadThur · live product · paying customers</div>
         </div>
       </div>
     </div>
@@ -685,63 +635,80 @@
     <div class="container">
       <div class="proof-grid reveal">
         <div>
-          <div class="proof-num">$2M+</div>
-          <div class="proof-label">Revenue generated at PromptEarn</div>
+          <div class="proof-num">5+</div>
+          <div class="proof-label">Products Launched</div>
         </div>
         <div>
-          <div class="proof-num">12+</div>
-          <div class="proof-label">Products built and launched</div>
+          <div class="proof-num">$2M+</div>
+          <div class="proof-label">Revenue Generated at PromptEarn</div>
         </div>
         <div>
           <div class="proof-num">50K+</div>
-          <div class="proof-label">Users reached across products</div>
+          <div class="proof-label">Users Reached</div>
         </div>
         <div>
           <div class="proof-num">3+</div>
-          <div class="proof-label">Years building products</div>
+          <div class="proof-label">Years Building Products</div>
         </div>
       </div>
     </div>
   </div>
 
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid reveal">
+        <div class="about-photo">
+          <img src="images/hero.png" alt="Bamidele Matthew" width="240" height="320" loading="lazy">
+        </div>
+        <div class="about-copy">
+          <p class="label">Founder</p>
+          <h2 class="display">Bamidele Matthew</h2>
+          <p>Co-founder and CTO of PromptEarn. Built the platform and helped scale it to $2M in revenue within 12 months.</p>
+          <p>Since then I've launched LeadThur, NairaInvoice, AdAnalyzer, and other products used by real customers across Nigeria and international markets.</p>
+          <p>I build for business outcomes: users who stay, payments that work, and products that are ready to launch, not sit in development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="work" id="work">
     <div class="container">
       <div class="section-head reveal">
         <p class="label">Products</p>
-        <h2 class="display">Live products I've built.</h2>
-        <p class="section-note">Every product below is live with real users.</p>
+        <h2 class="display">Live software I've built.</h2>
+        <p class="section-note">Every product below is live and used by real customers.</p>
       </div>
 
-      <a href="https://www.leadthur.com" class="project-featured reveal" target="_blank" rel="noopener">
-        <div class="project-img">
-          <img src="images/leadthur.png" alt="LeadThur.com" loading="lazy">
-        </div>
-        <div class="project-body">
-          <h3>LeadThur</h3>
-          <p class="project-oneliner">Find 1,000+ real businesses with contact details in any city worldwide, in under 60 seconds.</p>
-          <ul class="project-proofs">
-            <li>Live Product</li>
-            <li>Built From Scratch</li>
-            <li>Used By Real Customers</li>
-          </ul>
-          <span class="btn-site">View Product →</span>
-        </div>
-      </a>
+      <div class="projects-list">
+        <a href="https://www.leadthur.com" class="project-card reveal" target="_blank" rel="noopener">
+          <div class="project-img">
+            <img src="images/leadthur.png" alt="LeadThur" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>LeadThur</h3>
+            <p class="project-one-liner">Find 1,000+ real business leads in any city worldwide in under 60 seconds.</p>
+            <div class="project-proof">
+              <span>Live Product</span>
+              <span>Built From Scratch</span>
+              <span>Used By Real Customers</span>
+            </div>
+            <span class="btn-site">View Product</span>
+          </div>
+        </a>
 
-      <div class="projects-grid">
         <a href="https://naira-invoice.onrender.com/" class="project-card reveal" target="_blank" rel="noopener">
           <div class="project-img">
             <img src="images/naira-invoice.png" alt="NairaInvoice" loading="lazy">
           </div>
           <div class="project-body">
             <h3>NairaInvoice</h3>
-            <p class="project-oneliner">Professional invoicing for Nigerian businesses. Create, send, and track payments in under a minute.</p>
-            <ul class="project-proofs">
-              <li>Live Product</li>
-              <li>Built From Scratch</li>
-              <li>Used By Real Customers</li>
-            </ul>
-            <span class="btn-site">View Product →</span>
+            <p class="project-one-liner">Create and send professional invoices in under a minute, built for Nigerian businesses.</p>
+            <div class="project-proof">
+              <span>Live Product</span>
+              <span>Built From Scratch</span>
+              <span>Used By Real Customers</span>
+            </div>
+            <span class="btn-site">View Product</span>
           </div>
         </a>
 
@@ -751,13 +718,13 @@
           </div>
           <div class="project-body">
             <h3>AdAnalyzer</h3>
-            <p class="project-oneliner">Paste your ad copy and get a full breakdown on what's working, what's not, and how to fix it.</p>
-            <ul class="project-proofs">
-              <li>Live Product</li>
-              <li>Built From Scratch</li>
-              <li>Used By Real Customers</li>
-            </ul>
-            <span class="btn-site">View Product →</span>
+            <p class="project-one-liner">Paste your ad copy and get a full breakdown on what's hurting your reach before you spend money.</p>
+            <div class="project-proof">
+              <span>Live Product</span>
+              <span>Built From Scratch</span>
+              <span>Used By Real Customers</span>
+            </div>
+            <span class="btn-site">View Product</span>
           </div>
         </a>
 
@@ -767,64 +734,47 @@
           </div>
           <div class="project-body">
             <h3>Claude Clone, Naija Edition</h3>
-            <p class="project-oneliner">An AI assistant built for Nigerian business owners with local context, content tools, and WhatsApp reply generation.</p>
-            <ul class="project-proofs">
-              <li>Live Product</li>
-              <li>Built From Scratch</li>
-              <li>Used By Real Customers</li>
-            </ul>
-            <span class="btn-site">View Product →</span>
+            <p class="project-one-liner">An AI workspace with tools built for Nigerian business owners, from content to customer replies.</p>
+            <div class="project-proof">
+              <span>Live Product</span>
+              <span>Built From Scratch</span>
+              <span>Used By Real Customers</span>
+            </div>
+            <span class="btn-site">View Product</span>
           </div>
         </a>
 
         <a href="https://t.me/addecisionbot" class="project-card reveal" target="_blank" rel="noopener">
           <div class="project-img">
-            <img src="images/adley.png" alt="Adley Ads Advisor Bot" loading="lazy">
+            <img src="images/adley.png" alt="Adley" loading="lazy">
           </div>
           <div class="project-body">
             <h3>Adley</h3>
-            <p class="project-oneliner">A Telegram bot that acts as your personal Meta ads advisor. Send campaign data, get clear next steps.</p>
-            <ul class="project-proofs">
-              <li>Live Product</li>
-              <li>Built From Scratch</li>
-              <li>Used By Real Customers</li>
-            </ul>
-            <span class="btn-site">View Product →</span>
+            <p class="project-one-liner">A Telegram bot that tells you what to pause, scale, or fix in your ad campaigns.</p>
+            <div class="project-proof">
+              <span>Live Product</span>
+              <span>Built From Scratch</span>
+              <span>Used By Real Customers</span>
+            </div>
+            <span class="btn-site">View Product</span>
           </div>
         </a>
 
         <a href="https://ai-customer-support-seven-chi.vercel.app/" class="project-card reveal" target="_blank" rel="noopener">
           <div class="project-img">
-            <img src="images/ai-support.png" alt="AI Customer Support Chatbot" loading="lazy">
+            <img src="images/ai-support.png" alt="AI Customer Support" loading="lazy">
           </div>
           <div class="project-body">
             <h3>AI Customer Support</h3>
-            <p class="project-oneliner">A full customer support interface with voice input, quick replies, and help center search.</p>
-            <ul class="project-proofs">
-              <li>Live Product</li>
-              <li>Built From Scratch</li>
-              <li>Used By Real Customers</li>
-            </ul>
-            <span class="btn-site">View Product →</span>
+            <p class="project-one-liner">A full customer support channel with voice input, quick replies, and help center search.</p>
+            <div class="project-proof">
+              <span>Live Product</span>
+              <span>Built From Scratch</span>
+              <span>Used By Real Customers</span>
+            </div>
+            <span class="btn-site">View Product</span>
           </div>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid reveal">
-        <div class="about-photo">
-          <img src="images/hero.png" alt="Bamidele Matthew" width="200" height="250" loading="lazy">
-        </div>
-        <div class="about-copy">
-          <p class="label">About</p>
-          <h2 class="display">Founder and product builder.</h2>
-          <p>I co-founded PromptEarn and served as CTO while scaling it to $2M in revenue. I've since built and launched multiple SaaS products used by real customers across Nigeria and international markets.</p>
-          <p>I understand what founders need: a product that works, customers who pay, and someone who stays involved past launch day. That's what I bring to every project.</p>
-          <p>Based in Lagos. Working with founders and businesses who are ready to build and ship.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -833,67 +783,64 @@
     <div class="container">
       <div class="section-head reveal">
         <p class="label">What I Handle</p>
-        <h2 class="display">Everything needed to launch.</h2>
-        <p class="stack-sub">Plain language. No jargon. Here's what I take care of for you.</p>
+        <h2 class="display">Everything needed to go from idea to launch.</h2>
+        <p class="stack-sub">Plain language. No jargon. You always know what's being built and why.</p>
       </div>
       <div class="cap-list">
         <div class="cap-item reveal">
           <h3>Planning</h3>
-          <p>Understanding your idea, your customers, and what the product needs to do before anything gets built.</p>
+          <p>We define what to build, who it's for, and what success looks like before any code is written.</p>
         </div>
         <div class="cap-item reveal">
-          <h3>Customer Experience</h3>
-          <p>The screens, flows, and interactions your users see. Built to work on phones first.</p>
+          <h3>Design</h3>
+          <p>Interfaces your customers can use immediately, especially on mobile.</p>
         </div>
         <div class="cap-item reveal">
-          <h3>System Design</h3>
-          <p>The structure behind your product. How data moves, how features connect, how it all holds together.</p>
+          <h3>Build</h3>
+          <p>The full product: accounts, dashboards, payments, and everything behind the scenes.</p>
         </div>
         <div class="cap-item reveal">
           <h3>Payments</h3>
-          <p>Paystack for Nigeria, Flutterwave and other international gateways. Whatever your customers need to pay you.</p>
+          <p>Paystack, Flutterwave, and international payment options wired up properly for your market.</p>
         </div>
         <div class="cap-item reveal">
           <h3>Launch</h3>
-          <p>Getting your product live on real servers. Not a demo on my laptop. A product your customers can use today.</p>
+          <p>Your product goes live on real servers. You get full access and ownership from day one.</p>
         </div>
         <div class="cap-item reveal">
           <h3>Platform Setup</h3>
-          <p>Hosting, domains, email flows, admin tools. Everything running in the background so you can focus on customers.</p>
+          <p>Hosting, email, WhatsApp flows, and the systems that keep your product running after launch.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Process -->
   <section class="process" id="process">
     <div class="container">
       <div class="section-head reveal">
         <p class="label">Process</p>
-        <h2 class="display">How it works.</h2>
+        <h2 class="display">Three steps. That's it.</h2>
       </div>
       <div class="process-steps">
         <div class="process-step reveal">
-          <h3>Step 1. Tell me about your idea.</h3>
-          <p>One conversation. You explain what you want to build. I ask the questions that matter for your business.</p>
+          <h3>Step 1 — Tell me about your idea.</h3>
+          <p>One conversation. You explain the problem. I ask the questions that matter for your business.</p>
         </div>
         <div class="process-step reveal">
-          <h3>Step 2. I create a plan and show you exactly what needs to be built.</h3>
-          <p>You know the scope, the timeline, and what you're getting before any work starts.</p>
+          <h3>Step 2 — I create a plan and show you exactly what needs to be built.</h3>
+          <p>You get a clear scope, timeline, and weekly updates while I build.</p>
         </div>
         <div class="process-step reveal">
-          <h3>Step 3. I build it and help you launch.</h3>
-          <p>Weekly updates. A live product at the end. Full ownership handed to you.</p>
+          <h3>Step 3 — I build it and help you launch.</h3>
+          <p>Your product goes live. You own everything. I'm available if you need support after.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta" id="contact">
     <div class="container">
       <div class="cta-inner reveal">
-        <p class="label">Get In Touch</p>
         <h2 class="display">Ready to build something real?</h2>
         <p>Tell me about your idea and I'll show you the fastest path to launch.</p>
         <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20my%20project." class="btn btn-whatsapp" target="_blank" rel="noopener">
