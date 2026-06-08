@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bamidele Matthew — SaaS Builder & Product Operator</title>
-  <meta name="description" content="Bamidele Matthew builds MVPs and SaaS products for founders. Co-founder & CTO at PromptEarn. Based in Lagos, Nigeria.">
+  <title>Bamidele Matthew | SaaS Builder</title>
+  <meta name="description" content="Bamidele Matthew builds MVPs and SaaS products for founders. Co-founder and CTO at PromptEarn. Lagos, Nigeria.">
+  <meta name="deploy" content="vercel">
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
   <style>
@@ -67,19 +68,15 @@
       margin-bottom: 16px;
     }
 
-    .pill-label {
-      display: inline-flex;
-      align-items: center;
+    .hero-status {
       font-family: 'Satoshi', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      border: 1px solid rgba(200, 255, 0, 0.35);
-      border-radius: 100px;
-      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
       margin-bottom: 20px;
+    }
+    .hero-status span {
+      color: var(--accent);
     }
 
     /* Buttons */
@@ -557,7 +554,6 @@
       border-color: rgba(200, 255, 0, 0.2);
       transform: translateY(-2px);
     }
-    .about-card-icon { font-size: 24px; margin-bottom: 12px; }
     .about-card h3 {
       font-family: 'Satoshi', sans-serif;
       font-weight: 600;
@@ -628,28 +624,6 @@
       }
     }
     .project-body { padding: 24px; }
-    .project-label {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .badge-featured {
-      display: inline-block;
-      background: var(--accent);
-      color: #000;
-      font-family: 'Satoshi', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 3px 8px;
-      border-radius: 100px;
-      margin-bottom: 12px;
-    }
     .project-body h3 {
       font-family: 'Clash Display', sans-serif;
       font-weight: 600;
@@ -724,7 +698,6 @@
       line-height: 1.7;
       max-width: 480px;
       margin-top: 12px;
-      white-space: pre-line;
     }
     .cap-grid {
       display: grid;
@@ -745,7 +718,6 @@
       transition: background 0.2s ease;
     }
     .cap-item:hover { background: #1a1a1a; }
-    .cap-icon { font-size: 28px; margin-bottom: 14px; }
     .cap-item h3 {
       font-family: 'Satoshi', sans-serif;
       font-weight: 600;
@@ -828,13 +800,6 @@
       background: var(--section);
       position: relative;
       text-align: center;
-    }
-    .cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200, 255, 0, 0.05) 0%, transparent 70%);
-      pointer-events: none;
     }
     .cta-inner {
       position: relative;
@@ -965,14 +930,9 @@
 
     <div class="hero-grid">
       <div class="hero-copy hero-copy-wrap">
-        <div class="pill-label hero-label">Open to new projects</div>
+        <p class="hero-status hero-label"><span>Available</span> for new projects</p>
         <h1 class="display">You have an idea.<br>I'll turn it into<br>something real.</h1>
-        <p class="hero-sub">I'm Bamidele — a builder and operator based in Lagos.
-I've taken products from zero to thousands of real users
-across Africa and beyond.
-
-If you need someone who understands your business,
-builds fast, and actually delivers — this is the right place.</p>
+        <p class="hero-sub">I'm Bamidele, a builder and operator based in Lagos. I've taken products from zero to thousands of real users across Africa and beyond. If you need someone who understands your business, builds fast, and actually delivers, you're in the right place.</p>
         <div class="hero-buttons">
           <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20work%20with%20you." class="btn btn-primary" target="_blank" rel="noopener">
             <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1065,33 +1025,21 @@ builds fast, and actually delivers — this is the right place.</p>
         <div class="about-copy">
           <p class="label reveal">About</p>
           <h2 class="display reveal reveal-d1">I build products.<br>I understand<br>businesses.</h2>
-          <p class="reveal reveal-d2">Most developers hand you code and leave. I stay involved
-because I've seen what happens when the person building
-your product doesn't understand what it's supposed to do
-for your business. I've been on both sides — founder and
-builder — and that changes how I approach every project.</p>
-          <p class="reveal reveal-d2">At PromptEarn, I was CTO and co-founder. I built the
-platform and helped steer the growth strategy. That
-experience taught me that the best products aren't just
-well-built — they're built with a clear understanding of
-who they're for and what they need to make those people
-do next.</p>
+          <p class="reveal reveal-d2">Most developers hand you code and leave. I stay involved because I've seen what happens when the person building your product doesn't understand what it's supposed to do for your business. I've been on both sides, as a founder and as a builder, and that changes how I approach every project.</p>
+          <p class="reveal reveal-d2">At PromptEarn, I was CTO and co-founder. I built the platform and helped steer the growth strategy. That experience taught me that the best products aren't just well-built. They're built with a clear understanding of who they're for and what they need to make those people do next.</p>
           <p class="reveal reveal-d3">That's what I bring to your project.</p>
         </div>
         <div class="about-cards">
           <div class="about-card reveal">
-            <div class="about-card-icon">⚡</div>
-            <h3>Fast. Without cutting corners.</h3>
-            <p>A working MVP typically takes me 4 to 6 weeks. That's a real product — live, tested, and ready for users. Not a mockup.</p>
+            <h3>Fast without cutting corners</h3>
+            <p>A working MVP typically takes me 4 to 6 weeks. That's a real product: live, tested, and ready for users. Not a mockup.</p>
           </div>
           <div class="about-card reveal reveal-d1">
-            <div class="about-card-icon">🧠</div>
-            <h3>I think about the whole picture.</h3>
-            <p>Payment flows, user onboarding, affiliate systems, admin dashboards — I build these because I know they affect whether your product actually earns.</p>
+            <h3>I think about the whole picture</h3>
+            <p>Payment flows, user onboarding, affiliate systems, admin dashboards. I build these because I know they affect whether your product actually earns.</p>
           </div>
           <div class="about-card reveal reveal-d2">
-            <div class="about-card-icon">📲</div>
-            <h3>You're never left wondering.</h3>
+            <h3>You're never left wondering</h3>
             <p>Weekly updates. Always reachable. When I take a project, I treat it like it's mine.</p>
           </div>
         </div>
@@ -1105,28 +1053,19 @@ do next.</p>
       <div class="section-head reveal">
         <p class="label">Recent Work</p>
         <h2 class="display">Products I've built.<br>Every one of them is live.</h2>
-        <p class="section-note">Click any project to open it.</p>
+        <p class="section-note">Tap a project to visit the live site.</p>
       </div>
 
-      <!-- LeadThur Featured -->
       <a href="https://www.leadthur.com" class="project-featured reveal" target="_blank" rel="noopener">
         <div class="project-img">
           <img src="images/leadthur.png" alt="LeadThur.com" loading="lazy">
         </div>
         <div class="project-body">
-          <p class="project-label">Recent Project</p>
-          <span class="badge-featured">Featured</span>
+          <p class="project-tagline">Lead generation · SaaS</p>
           <h3>LeadThur.com</h3>
-          <p>Type any type of business and any city anywhere in the
-world. LeadThur finds you real businesses — with their
-phone numbers, emails, websites, and ratings — in under
-60 seconds. It works across 195 countries and exports
-everything to a spreadsheet with one click.
+          <p>Type any type of business and any city anywhere in the world. LeadThur finds you real businesses with their phone numbers, emails, websites, and ratings in under 60 seconds. It works across 195 countries and exports everything to a spreadsheet with one click.
 
-Built with a full payment system, affiliate program,
-admin dashboard, and automated emails. Every part of it,
-from the first line of code to the server it runs on,
-was built by me.</p>
+Built with a full payment system, affiliate program, admin dashboard, and automated emails. Every part of it, from the first line of code to the server it runs on, was built by me.</p>
           <div class="tech-tags">
             <span class="tech-tag">Next.js</span>
             <span class="tech-tag">TypeScript</span>
@@ -1137,25 +1076,19 @@ was built by me.</p>
             <span class="tech-tag">Playwright</span>
             <span class="tech-tag">Coolify</span>
           </div>
-          <span class="btn-site">Open Live Site →</span>
+          <span class="btn-site">View live site</span>
         </div>
       </a>
 
       <div class="projects-grid">
-        <!-- NairaInvoice -->
         <a href="https://naira-invoice.onrender.com/" class="project-card reveal" target="_blank" rel="noopener">
           <div class="project-img">
             <img src="images/naira-invoice.png" alt="NairaInvoice" loading="lazy">
           </div>
           <div class="project-body">
-            <p class="project-label">Recent Project</p>
             <h3>NairaInvoice</h3>
             <p class="project-tagline">Invoicing · Fintech</p>
-            <p>A fast, clean invoicing tool for Nigerian freelancers and
-small businesses. Create a professional invoice in under a
-minute, send it by WhatsApp link, and track who has paid.
-Five invoice styles, PDF download, and a payment dashboard
-that shows exactly what you're owed.</p>
+            <p>A fast, clean invoicing tool for Nigerian freelancers and small businesses. Create a professional invoice in under a minute, send it by WhatsApp link, and track who has paid. Five invoice styles, PDF download, and a payment dashboard that shows exactly what you're owed.</p>
             <div class="tech-tags">
               <span class="tech-tag">Node.js</span>
               <span class="tech-tag">PostgreSQL</span>
@@ -1163,73 +1096,54 @@ that shows exactly what you're owed.</p>
               <span class="tech-tag">PDFKit</span>
               <span class="tech-tag">Vanilla JS</span>
             </div>
-            <span class="btn-site">Open Live Site →</span>
+            <span class="btn-site">View live site</span>
           </div>
         </a>
 
-        <!-- AdAnalyzer -->
         <a href="https://adanalyzer.pdigitalhq.com/" class="project-card reveal reveal-d1" target="_blank" rel="noopener">
           <div class="project-img">
             <img src="images/adanalyzer.png" alt="AdAnalyzer" loading="lazy">
           </div>
           <div class="project-body">
-            <p class="project-label">Recent Project</p>
             <h3>AdAnalyzer</h3>
             <p class="project-tagline">AI Tool · Marketing</p>
-            <p>Paste your Facebook or Instagram ad copy and get a full
-breakdown in under two minutes. It flags what's killing
-your reach, scores how well it fits the Nigerian market,
-checks for policy issues, and gives you a rewrite.
-Built for business owners who run their own ads.</p>
+            <p>Paste your Facebook or Instagram ad copy and get a full breakdown in under two minutes. It flags what's killing your reach, scores how well it fits the Nigerian market, checks for policy issues, and gives you a rewrite. Built for business owners who run their own ads.</p>
             <div class="tech-tags">
               <span class="tech-tag">Cloudflare Workers</span>
               <span class="tech-tag">DeepSeek API</span>
               <span class="tech-tag">Vanilla JS</span>
               <span class="tech-tag">KV Storage</span>
             </div>
-            <span class="btn-site">Open Live Site →</span>
+            <span class="btn-site">View live site</span>
           </div>
         </a>
 
-        <!-- Claude Clone -->
         <a href="https://claude-clone-62wr.onrender.com/" class="project-card reveal" target="_blank" rel="noopener">
           <div class="project-img">
-            <img src="images/claude-clone.png" alt="Claude Clone — Naija Edition" loading="lazy">
+            <img src="images/claude-clone.png" alt="Claude Clone Naija Edition" loading="lazy">
           </div>
           <div class="project-body">
-            <p class="project-label">Recent Project</p>
-            <h3>Claude Clone — Naija Edition</h3>
+            <h3>Claude Clone, Naija Edition</h3>
             <p class="project-tagline">AI App · Productivity</p>
-            <p>A fully working AI chat interface with three features
-built specifically for the Nigerian market. Naija Mode
-switches the AI to think in Nigerian context. The
-WhatsApp Reply Generator writes professional customer
-responses. The Content Generator produces ready-to-post
-content for six social platforms at once.</p>
+            <p>A fully working AI chat interface with three features built specifically for the Nigerian market. Naija Mode switches the AI to think in Nigerian context. The WhatsApp Reply Generator writes professional customer responses. The Content Generator produces ready-to-post content for six social platforms at once.</p>
             <div class="tech-tags">
               <span class="tech-tag">Claude API</span>
               <span class="tech-tag">Node.js</span>
               <span class="tech-tag">HTML/CSS/JS</span>
               <span class="tech-tag">Render</span>
             </div>
-            <span class="btn-site">Open Live Site →</span>
+            <span class="btn-site">View live site</span>
           </div>
         </a>
 
-        <!-- Adley -->
         <a href="https://t.me/addecisionbot" class="project-card reveal reveal-d1" target="_blank" rel="noopener">
           <div class="project-img">
-            <img src="images/adley.png" alt="Adley — Ads Advisor Bot" loading="lazy">
+            <img src="images/adley.png" alt="Adley Ads Advisor Bot" loading="lazy">
           </div>
           <div class="project-body">
-            <p class="project-label">Recent Project</p>
-            <h3>Adley — Ads Advisor Bot</h3>
+            <h3>Adley, Ads Advisor Bot</h3>
             <p class="project-tagline">AI Bot · Telegram</p>
-            <p>A Telegram bot that works like a personal ads strategist.
-Send it your campaign data as a file and it tells you
-what to pause, what to push harder, and what to fix.
-It remembers your conversation history so every reply
-has full context. Deployed on a private server via Docker.</p>
+            <p>A Telegram bot that works like a personal ads strategist. Send it your campaign data as a file and it tells you what to pause, what to push harder, and what to fix. It remembers your conversation history so every reply has full context. Deployed on a private server via Docker.</p>
             <div class="tech-tags">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Telegram API</span>
@@ -1237,23 +1151,18 @@ has full context. Deployed on a private server via Docker.</p>
               <span class="tech-tag">Docker</span>
               <span class="tech-tag">Coolify</span>
             </div>
-            <span class="btn-site">Open Live Site →</span>
+            <span class="btn-site">View live site</span>
           </div>
         </a>
 
-        <!-- AI Support -->
         <a href="https://ai-customer-support-seven-chi.vercel.app/" class="project-card reveal" target="_blank" rel="noopener">
           <div class="project-img">
             <img src="images/ai-support.png" alt="AI Customer Support Chatbot" loading="lazy">
           </div>
           <div class="project-body">
-            <p class="project-label">Recent Project</p>
             <h3>AI Customer Support Chatbot</h3>
             <p class="project-tagline">AI App · Support</p>
-            <p>A full support chat interface powered by AI. Voice input,
-quick reply buttons, help center search, light and dark
-mode. Built to feel like a real support channel — not a
-demo or a proof of concept. Works on any device.</p>
+            <p>A full support chat interface powered by AI. Voice input, quick reply buttons, help center search, light and dark mode. Built to feel like a real support channel, not a demo. Works on any device.</p>
             <div class="tech-tags">
               <span class="tech-tag">Node.js</span>
               <span class="tech-tag">Express</span>
@@ -1261,68 +1170,56 @@ demo or a proof of concept. Works on any device.</p>
               <span class="tech-tag">Web Speech API</span>
               <span class="tech-tag">Vercel</span>
             </div>
-            <span class="btn-site">Open Live Site →</span>
+            <span class="btn-site">View live site</span>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Capabilities -->
   <section class="stack" id="stack">
     <div class="container">
       <div class="section-head reveal">
         <p class="label">Capabilities</p>
-        <h2 class="display">Built for founders,<br>not developers.</h2>
-        <p class="stack-sub">You don't need to understand the tools.
-You need to know your product is in good hands.
-Here's what I work with.</p>
+        <h2 class="display">What I handle<br>for your product.</h2>
+        <p class="stack-sub">You don't need to understand the tools. You need to know your product is in good hands.</p>
       </div>
       <div class="cap-grid">
         <div class="cap-item reveal">
-          <div class="cap-icon">⚛️</div>
           <h3>Frontend</h3>
           <p>The screens your users see, click, and interact with. Fast, clean, and built for phones.</p>
         </div>
         <div class="cap-item reveal reveal-d1">
-          <div class="cap-icon">🖥️</div>
           <h3>Backend</h3>
           <p>The logic running behind the scenes that makes your product actually work.</p>
         </div>
         <div class="cap-item reveal reveal-d2">
-          <div class="cap-icon">🗄️</div>
           <h3>Database</h3>
           <p>Where your users, orders, and data live. Structured properly from day one.</p>
         </div>
         <div class="cap-item reveal">
-          <div class="cap-icon">💳</div>
           <h3>Payments</h3>
-          <p>Paystack for Nigeria. Flutterwave for international payments. Wired properly with all the right checks.</p>
+          <p>Paystack for Nigeria, Flutterwave and other international gateways for global payments. I wire up whatever your business needs, with webhooks and proper checks in place.</p>
         </div>
         <div class="cap-item reveal reveal-d1">
-          <div class="cap-icon">🚀</div>
           <h3>Deployment</h3>
-          <p>Your product goes live on real infrastructure — not just on my computer.</p>
+          <p>Your product goes live on Vercel, Coolify, or real infrastructure. Not just on my laptop.</p>
         </div>
         <div class="cap-item reveal reveal-d2">
-          <div class="cap-icon">🤖</div>
           <h3>AI Features</h3>
-          <p>Smart features your users will find genuinely useful, not gimmicky.</p>
+          <p>Smart features your users will actually use. Nothing gimmicky.</p>
         </div>
         <div class="cap-item reveal">
-          <div class="cap-icon">🔗</div>
           <h3>Integrations</h3>
-          <p>Emails, WhatsApp flows, webhooks, affiliate systems — everything connected.</p>
+          <p>Emails, WhatsApp flows, webhooks, affiliate systems. Everything connected.</p>
         </div>
         <div class="cap-item reveal reveal-d1">
-          <div class="cap-icon">📲</div>
           <h3>Mobile-First</h3>
-          <p>Every product I build works properly on a phone. Because that's where your users are.</p>
+          <p>Every product I build works properly on a phone. That's where your users are.</p>
         </div>
         <div class="cap-item reveal reveal-d2">
-          <div class="cap-icon">🛠️</div>
           <h3>Full Ownership</h3>
-          <p>When I hand it over, the code is yours. No lock-in. No 'only I can maintain this.'</p>
+          <p>When I hand it over, the code is yours. No lock-in. No "only I can maintain this."</p>
         </div>
       </div>
     </div>
@@ -1350,9 +1247,7 @@ usually enough.</p>
         <div class="process-step reveal reveal-d1">
           <div class="step-box">02</div>
           <h3>I build it and keep you in the loop</h3>
-          <p>I handle everything — the design, the code, the database,
-payments, deployment. You get a clear update every week.
-No disappearing. No surprises at the end.</p>
+          <p>I handle everything: design, code, database, payments, deployment. You get a clear update every week. No disappearing. No surprises at the end.</p>
         </div>
         <div class="process-step reveal reveal-d2">
           <div class="step-box">03</div>
@@ -1372,16 +1267,12 @@ I'm available for that too.</p>
       <div class="cta-inner reveal">
         <p class="label">Get In Touch</p>
         <h2 class="display">Ready to build<br>something real?</h2>
-        <p>If you have a product idea and you need someone you
-can trust to build it properly — send me a message.
-
-I work with founders who are serious about what they're
-building and ready to move. If that's you, let's talk.</p>
+        <p>If you have a product idea and you need someone you can trust to build it properly, send me a message. I work with founders who are serious about what they're building and ready to move.</p>
         <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20my%20project." class="btn btn-whatsapp" target="_blank" rel="noopener">
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Send Me a Message on WhatsApp
         </a>
-        <p class="cta-note">+234 902 398 6992 · Typically replies within a few hours</p>
+        <p class="cta-note">+234 902 398 6992. Usually replies within a few hours.</p>
       </div>
     </div>
   </section>
@@ -1392,10 +1283,9 @@ building and ready to move. If that's you, let's talk.</p>
       <div class="footer-logo">Bamidele Matthew<span class="logo-dot">.</span></div>
       <ul class="footer-links">
         <li><a href="https://x.com/BamsonOfficial" target="_blank" rel="noopener">Twitter/X</a></li>
-        <li><a href="https://www.leadthur.com" target="_blank" rel="noopener">LeadThur</a></li>
         <li><a href="https://wa.me/2349023986992" target="_blank" rel="noopener">WhatsApp</a></li>
       </ul>
-      <div class="footer-right">Lagos, Nigeria · 2026</div>
+      <div class="footer-right">Lagos, Nigeria. 2026</div>
     </div>
   </footer>
 
