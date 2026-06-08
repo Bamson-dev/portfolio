@@ -3,80 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bamidele Matthew | SaaS Builder</title>
-  <meta name="description" content="Bamidele Matthew builds MVPs and SaaS products for founders. Co-founder and CTO at PromptEarn. Lagos, Nigeria.">
+  <title>Bamidele Matthew · Founder & Product Builder</title>
+  <meta name="description" content="Founder of PromptEarn. Bamidele Matthew builds software products with real users, real revenue, and real traction across multiple markets.">
   <meta name="deploy" content="vercel">
-  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #080808;
-      --section: #0F0F0F;
-      --card: #141414;
-      --border: rgba(255, 255, 255, 0.06);
-      --text: #EDEBE6;
-      --muted: rgba(237, 235, 230, 0.5);
-      --accent: #C8FF00;
-      --whatsapp: #25D366;
-      --max-w: 1160px;
-      --pad-mob: 64px 20px;
-      --pad-desk: 100px 60px;
+      --bg: #050505;
+      --surface: #0a0a0a;
+      --line: rgba(255,255,255,0.08);
+      --text: #ffffff;
+      --muted: #a1a1aa;
+      --accent: #d7ff3f;
+      --max: 1120px;
+      --pad-x: 20px;
+      --section-y: 80px;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 400;
+      font-family: 'Inter', -apple-system, sans-serif;
       background: var(--bg);
       color: var(--text);
+      font-size: 16px;
       line-height: 1.6;
-      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
 
-    .container {
-      max-width: var(--max-w);
+    .wrap {
+      max-width: var(--max);
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 var(--pad-x);
     }
 
-    @media (min-width: 768px) {
-      .container { padding: 0 60px; }
+    @media (min-width: 900px) {
+      :root { --pad-x: 48px; --section-y: 120px; }
     }
 
-    /* Typography */
-    .display {
-      font-family: 'Clash Display', sans-serif;
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+    /* Nav */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(5,5,5,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
     }
-
-    .label {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 11px;
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px var(--pad-x);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo {
+      font-size: 15px;
       font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
+      letter-spacing: -0.02em;
     }
-
-    .hero-status {
-      font-family: 'Satoshi', sans-serif;
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 32px;
+    }
+    @media (min-width: 900px) { .nav-links { display: flex; } }
+    .nav-links a {
+      font-size: 14px;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
       font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      background: var(--text);
+      color: var(--bg);
+      border-radius: 6px;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* Type */
+    .eyebrow {
+      font-size: 12px;
       font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 20px;
     }
-    .hero-status span {
-      color: var(--accent);
+    .h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+    .h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .h3 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .lead {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 540px;
+    }
+    @media (min-width: 900px) { .lead { font-size: 18px; } }
+    .body-text {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
     }
 
     /* Buttons */
@@ -84,1261 +144,988 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      font-family: 'Satoshi', sans-serif;
-      border: none;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 12px 20px;
+      border-radius: 6px;
+      border: 1px solid transparent;
       cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
-      width: 100%;
+      transition: opacity 0.2s, border-color 0.2s, background 0.2s;
+      min-height: 44px;
     }
-
-    @media (min-width: 768px) {
-      .btn { width: auto; }
-    }
-
     .btn-primary {
-      background: var(--accent);
-      color: #000;
-      font-weight: 700;
-      font-size: 15px;
-      padding: 14px 24px;
-      border-radius: 4px;
-      min-height: 48px;
+      background: var(--text);
+      color: var(--bg);
     }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(200, 255, 0, 0.3);
-    }
-
+    .btn-primary:hover { opacity: 0.9; }
     .btn-secondary {
       background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 500;
-      padding: 14px 24px;
-      border-radius: 4px;
-      min-height: 48px;
-    }
-    .btn-secondary:hover {
-      border-color: rgba(200, 255, 0, 0.3);
       color: var(--text);
+      border-color: var(--line);
     }
-
-    .btn-nav {
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.2); }
+    .btn-accent {
       background: var(--accent);
-      color: #000;
-      font-weight: 600;
-      font-size: 13px;
-      padding: 10px 18px;
-      border-radius: 4px;
-      min-height: 44px;
-      width: auto;
+      color: #050505;
     }
-
-    .btn-nav-mobile {
-      font-size: 13px;
-      padding: 10px 16px;
-    }
-
-    .btn-site {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(200, 255, 0, 0.08);
-      color: var(--accent);
-      border: 1px solid rgba(200, 255, 0, 0.25);
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 600;
-      font-size: 13px;
-      padding: 10px 16px;
-      border-radius: 4px;
-      min-height: 44px;
-      width: fit-content;
-      transition: transform 0.2s ease, background 0.2s ease;
-    }
-    .btn-site:hover {
-      background: rgba(200, 255, 0, 0.14);
-      transform: translateY(-1px);
-    }
-
-    .btn-whatsapp {
-      background: var(--whatsapp);
-      color: #fff;
-      font-weight: 700;
-      font-size: 16px;
-      padding: 16px 20px;
-      border-radius: 4px;
-      min-height: 48px;
-    }
-    @media (min-width: 768px) {
-      .btn-whatsapp { padding: 16px 32px; }
-    }
-    .btn-whatsapp:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 36px rgba(37, 211, 102, 0.28);
-    }
-
-    .icon { width: 20px; height: 20px; flex-shrink: 0; }
-    .icon-sm { width: 16px; height: 16px; flex-shrink: 0; }
-
-    /* Nav */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(8, 8, 8, 0.9);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 18px 20px;
+    .btn-accent:hover { opacity: 0.92; }
+    .btn-row {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: padding 0.3s ease;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 32px;
     }
-    @media (min-width: 768px) {
-      .nav-inner { padding: 22px 60px; }
+    @media (min-width: 540px) {
+      .btn-row { flex-direction: row; flex-wrap: wrap; }
     }
-    .nav.scrolled .nav-inner { padding-top: 14px; padding-bottom: 14px; }
 
-    .logo {
-      font-family: 'Clash Display', sans-serif;
-      font-weight: 600;
-      font-size: 18px;
-      color: var(--text);
-    }
-    .logo-dot { color: var(--accent); }
-
-    .nav-links {
-      display: none;
-      list-style: none;
-      gap: 36px;
-    }
-    @media (min-width: 768px) {
-      .nav-links {
-        display: flex;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
-    .nav-links a {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--muted);
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-
-    .nav-desk-cta { display: none; }
-    @media (min-width: 768px) {
-      .nav-mob-cta { display: none; }
-      .nav-desk-cta { display: inline-flex; }
-    }
+    /* Sections */
+    section { padding: var(--section-y) 0; }
+    .section-line { border-top: 1px solid var(--line); }
 
     /* Hero */
     .hero {
-      padding-top: calc(72px + 32px);
-      padding-bottom: 64px;
+      padding-top: calc(64px + 48px);
+      padding-bottom: 48px;
     }
-    @media (min-width: 768px) {
-      .hero {
-        padding-top: calc(88px + 60px);
-        padding-bottom: 100px;
-      }
+    @media (min-width: 900px) {
+      .hero { padding-top: calc(64px + 80px); padding-bottom: 64px; }
     }
-
-    .hero-copy-wrap {
-      padding: 0 20px;
-    }
-    @media (min-width: 768px) {
-      .hero-copy-wrap { padding: 0; }
-    }
-
-    .hero-photo-mob {
-      width: 100vw;
-      max-width: 100vw;
-      margin-left: calc(50% - 50vw);
-      height: 320px;
-      position: relative;
-      overflow: hidden;
-      margin-bottom: 36px;
-    }
-    .hero-photo-mob img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      filter: grayscale(10%) contrast(1.08) brightness(0.95);
-    }
-    .hero-photo-mob::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, var(--bg) 0%, transparent 45%);
-      pointer-events: none;
-    }
-    @media (min-width: 768px) {
-      .hero-photo-mob { display: none; }
-    }
-
     .hero-grid {
-      display: flex;
-      flex-direction: column;
-    }
-    @media (min-width: 768px) {
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1fr 420px;
-        gap: 60px;
-        align-items: center;
-        max-width: var(--max-w);
-        margin: 0 auto;
-        padding: 0 60px;
-      }
-    }
-
-    .hero-copy { max-width: 560px; }
-
-    .hero h1 {
-      font-size: 38px;
-      margin-bottom: 24px;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.25s forwards;
-    }
-    @media (min-width: 768px) {
-      .hero h1 { font-size: 64px; }
-    }
-
-    .hero-sub {
-      font-weight: 300;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.75;
-      max-width: 500px;
-      margin-bottom: 32px;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.4s forwards;
-    }
-    @media (min-width: 768px) {
-      .hero-sub { font-size: 18px; }
-    }
-
-    .hero-label {
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.1s forwards;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 40px;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.55s forwards;
-    }
-    @media (min-width: 768px) {
-      .hero-buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 14px;
-      }
-    }
-
-    .hero-stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.7s forwards;
+      gap: 48px;
     }
-    .stat {
-      padding: 0 10px;
-      text-align: center;
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1.1fr;
+        gap: 64px;
+        align-items: center;
+      }
     }
-    .stat:not(:last-child) {
-      border-right: 1px solid var(--border);
+
+    /* Product showcase */
+    .showcase {
+      position: relative;
+      height: 340px;
+      margin-top: 8px;
     }
-    @media (min-width: 768px) {
-      .stat { text-align: left; padding: 0 28px; }
-      .stat:first-child { padding-left: 0; }
+    @media (min-width: 900px) { .showcase { height: 420px; } }
+    .frame {
+      position: absolute;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
     }
-    .stat-num {
-      font-family: 'Clash Display', sans-serif;
+    .frame-bar {
+      height: 28px;
+      background: #141414;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 6px;
+    }
+    .frame-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #333;
+    }
+    .frame img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: top;
+    }
+    .frame-main {
+      width: 78%;
+      left: 0; top: 0;
+      z-index: 3;
+    }
+    .frame-mid {
+      width: 62%;
+      right: 0; top: 48px;
+      z-index: 2;
+      opacity: 0.92;
+    }
+    .frame-back {
+      width: 48%;
+      left: 18%; bottom: 0;
+      z-index: 1;
+      opacity: 0.75;
+    }
+
+    /* Proof bar */
+    .proof {
+      padding: 48px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 24px;
+    }
+    @media (min-width: 700px) {
+      .proof-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    }
+    .proof-num {
+      font-size: clamp(32px, 5vw, 48px);
       font-weight: 700;
-      font-size: 28px;
-      color: var(--accent);
+      letter-spacing: -0.04em;
       line-height: 1;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
-    @media (min-width: 768px) {
-      .stat-num { font-size: 36px; }
-    }
-    .stat-label {
+    .proof-num span { color: var(--accent); }
+    .proof-label {
       font-size: 13px;
-      font-weight: 300;
       color: var(--muted);
       line-height: 1.4;
     }
 
-    .hero-photo-desk {
-      display: none;
-      position: relative;
-      opacity: 0;
-      animation: fadeUp 0.8s ease 0.3s forwards;
+    /* Product feature blocks */
+    .product-block {
+      padding: var(--section-y) 0;
+      border-top: 1px solid var(--line);
     }
-    @media (min-width: 768px) {
-      .hero-photo-desk { display: block; }
+    .product-block-inner {
+      display: grid;
+      gap: 40px;
+      align-items: center;
     }
-    .hero-photo-desk .photo-frame {
-      position: relative;
-      border-radius: 12px;
+    @media (min-width: 900px) {
+      .product-block-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+      }
+      .product-block.reverse .product-block-inner {
+        direction: rtl;
+      }
+      .product-block.reverse .product-block-inner > * {
+        direction: ltr;
+      }
+    }
+    .product-shot {
+      border: 1px solid var(--line);
+      border-radius: 10px;
       overflow: hidden;
+      background: #0d0d0d;
+    }
+    .product-shot img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      object-position: top;
+    }
+    .product-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0 24px;
+    }
+    .tag {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+    }
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .stat-item strong {
+      display: block;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .stat-item span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .link-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 8px;
+      transition: gap 0.2s;
+    }
+    .link-arrow:hover { gap: 10px; }
+
+    /* Case study */
+    .case-study {
+      padding: var(--section-y) 0;
+      border-top: 1px solid var(--line);
+    }
+    .case-header { margin-bottom: 48px; max-width: 640px; }
+    .case-grid {
+      display: grid;
+      gap: 40px;
+    }
+    @media (min-width: 900px) {
+      .case-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
+    }
+    .case-block h4 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .case-block p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 32px;
+    }
+    .case-metric {
+      background: var(--surface);
+      padding: 20px;
+    }
+    .case-metric strong {
+      display: block;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+    .case-metric span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .case-visual {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    .case-visual img {
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+    .growth-bar {
+      margin-top: 32px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    .growth-bar h4 {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+    }
+    .bar-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      height: 120px;
+    }
+    .bar {
+      flex: 1;
+      background: var(--line);
+      border-radius: 3px 3px 0 0;
+      position: relative;
+      min-width: 0;
+    }
+    .bar.fill { background: var(--accent); }
+    .bar-labels {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .bar-labels span {
+      flex: 1;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Process timeline */
+    .process-list {
+      margin-top: 48px;
+      border-left: 1px solid var(--line);
+      margin-left: 8px;
+    }
+    .process-item {
+      padding: 0 0 40px 32px;
+      position: relative;
+    }
+    .process-item:last-child { padding-bottom: 0; }
+    .process-item::before {
+      content: '';
+      position: absolute;
+      left: -5px; top: 6px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--line);
+    }
+    .process-item.active::before {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .process-num {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .process-item h3 { font-size: 18px; margin-bottom: 8px; }
+    .process-item p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 520px; }
+
+    /* Tech */
+    .tech-grid {
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 48px;
+    }
+    @media (min-width: 700px) {
+      .tech-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 900px) {
+      .tech-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .tech-col {
+      background: var(--surface);
+      padding: 28px;
+    }
+    .tech-col h3 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .tech-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .tech-col li {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      gap: 40px;
+      align-items: start;
+    }
+    @media (min-width: 900px) {
+      .about-grid { grid-template-columns: 320px 1fr; gap: 64px; }
+    }
+    .about-photo {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--line);
       aspect-ratio: 4/5;
     }
-    .hero-photo-desk img {
+    .about-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top center;
-      filter: grayscale(10%) contrast(1.08) brightness(0.95);
+      filter: grayscale(20%) contrast(1.05);
     }
-    .hero-photo-desk .photo-frame::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, var(--bg) 0%, transparent 40%);
-      pointer-events: none;
+    .about-points {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
-    .photo-badge {
-      position: absolute;
-      bottom: 20px;
-      left: -12px;
-      background: var(--accent);
-      color: #000;
-      padding: 10px 16px;
-      border-radius: 8px;
-      box-shadow: 0 8px 24px rgba(200, 255, 0, 0.25);
-      z-index: 2;
-    }
-    .photo-badge strong {
+    .about-point strong {
       display: block;
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 700;
-      font-size: 13px;
-    }
-    .photo-badge span {
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 500;
-      font-size: 12px;
-      opacity: 0.75;
-    }
-    .hero-photo-mob .photo-badge {
-      left: 16px;
-      bottom: 16px;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Marquee */
-    .marquee-wrap {
-      background: var(--section);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 0;
-      overflow: hidden;
-    }
-    .marquee {
-      display: flex;
-      width: max-content;
-      animation: marquee 30s linear infinite;
-    }
-    .marquee-track {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-    .marquee-item {
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 500;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-    .marquee-dot {
-      width: 5px;
-      height: 5px;
-      background: var(--accent);
-      border-radius: 50%;
-      margin: 0 18px;
-      flex-shrink: 0;
-    }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* Sections */
-    section { padding: 64px 0; }
-    @media (min-width: 768px) {
-      section { padding: 100px 0; }
-    }
-
-    .section-head { margin-bottom: 40px; }
-    @media (min-width: 768px) {
-      .section-head { margin-bottom: 52px; }
-    }
-    .section-head h2 {
-      font-size: 34px;
-      max-width: 520px;
-    }
-    @media (min-width: 768px) {
-      .section-head h2 { font-size: 48px; }
-    }
-    .section-note {
-      font-size: 14px;
-      font-weight: 300;
-      color: var(--muted);
-      margin-top: 12px;
-    }
-
-    /* About */
-    .about { background: var(--section); }
-    .about-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 48px;
-    }
-    @media (min-width: 768px) {
-      .about-grid {
-        display: grid;
-        grid-template-columns: 60% 40%;
-        gap: 48px;
-        align-items: start;
-      }
-    }
-    .about-copy p {
-      font-weight: 300;
-      font-size: 16px;
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-    .about-copy p:last-child { margin-bottom: 0; }
-    .about-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .about-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 24px;
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-    .about-card:hover {
-      border-color: rgba(200, 255, 0, 0.2);
-      transform: translateY(-2px);
-    }
-    .about-card h3 {
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 600;
       font-size: 15px;
-      margin-bottom: 8px;
+      font-weight: 600;
+      margin-bottom: 4px;
     }
-    .about-card p {
-      font-weight: 300;
+    .about-point p {
       font-size: 14px;
       color: var(--muted);
       line-height: 1.65;
     }
 
-    /* Projects */
-    .work { background: var(--bg); }
-    .project-featured {
-      display: flex;
-      flex-direction: column;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 20px;
-      transition: border-color 0.3s ease, transform 0.3s ease;
-    }
-    .project-featured:hover {
-      border-color: rgba(200, 255, 0, 0.18);
-      transform: translateY(-4px);
-    }
-    @media (min-width: 768px) {
-      .project-featured {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    .project-img {
-      position: relative;
-      overflow: hidden;
-      height: 220px;
-    }
-    @media (min-width: 768px) {
-      .project-featured .project-img { height: auto; min-height: 360px; }
-    }
-    .project-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      transition: transform 0.5s ease;
-    }
-    .project-featured:hover .project-img img,
-    .project-card:hover .project-img img {
-      transform: scale(1.04);
-    }
-    .project-img::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, var(--card) 0%, transparent 50%);
-      pointer-events: none;
-    }
-    .project-featured .project-img::after {
-      background: linear-gradient(to top, var(--card) 0%, transparent 40%);
-    }
-    @media (min-width: 768px) {
-      .project-featured .project-img::after {
-        background: linear-gradient(to right, transparent 50%, var(--card) 100%);
-      }
-    }
-    .project-body { padding: 24px; }
-    .project-body h3 {
-      font-family: 'Clash Display', sans-serif;
-      font-weight: 600;
-      font-size: 22px;
-      margin-bottom: 6px;
-    }
-    .project-tagline {
-      font-size: 13px;
-      font-weight: 400;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-    .project-body p {
-      font-weight: 300;
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 20px;
-      white-space: pre-line;
-    }
-    .tech-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-    .tech-tag {
-      font-family: 'Satoshi', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      padding: 5px 11px;
-      border-radius: 100px;
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--muted);
-      border: 1px solid var(--border);
-    }
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    @media (min-width: 768px) {
-      .projects-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
-    }
-    .project-card {
-      display: block;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: border-color 0.3s ease, transform 0.3s ease;
-    }
-    .project-card:hover {
-      border-color: rgba(200, 255, 0, 0.18);
-      transform: translateY(-4px);
-    }
-    .project-card .project-img { height: 220px; }
-    @media (min-width: 768px) {
-      .project-card .project-img { height: 260px; }
-    }
-
-    /* Capabilities */
-    .stack { background: var(--section); }
-    .stack-sub {
-      font-weight: 300;
-      font-size: 16px;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 480px;
-      margin-top: 12px;
-    }
-    .cap-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
+    /* Insights */
+    .insight-list {
       margin-top: 40px;
+      border-top: 1px solid var(--line);
     }
-    @media (min-width: 768px) {
-      .cap-grid { grid-template-columns: repeat(3, 1fr); }
+    .insight-item {
+      display: block;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+      transition: opacity 0.2s;
     }
-    .cap-item {
-      background: var(--card);
-      padding: 28px;
-      transition: background 0.2s ease;
-    }
-    .cap-item:hover { background: #1a1a1a; }
-    .cap-item h3 {
-      font-family: 'Satoshi', sans-serif;
-      font-weight: 600;
-      font-size: 15px;
+    .insight-item:hover { opacity: 0.8; }
+    .insight-date {
+      font-size: 12px;
+      color: var(--muted);
       margin-bottom: 8px;
     }
-    .cap-item p {
-      font-weight: 300;
-      font-size: 13px;
+    .insight-item h3 {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .insight-item p {
+      font-size: 14px;
       color: var(--muted);
       line-height: 1.6;
+      max-width: 600px;
     }
 
-    /* Process */
-    .process { background: var(--bg); }
-    .process-sub {
-      font-weight: 300;
-      font-size: 16px;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 520px;
-      margin-top: 12px;
-      white-space: pre-line;
+    /* Contact */
+    .contact {
+      text-align: center;
+      padding-bottom: calc(var(--section-y) + 24px);
     }
-    .process-steps {
+    .contact .h2 { margin-bottom: 12px; }
+    .contact .lead { margin: 0 auto 36px; }
+    .contact-btns {
       display: flex;
       flex-direction: column;
-      gap: 40px;
-      margin-top: 48px;
-    }
-    @media (min-width: 768px) {
-      .process-steps {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 32px;
-        position: relative;
-      }
-      .process-steps::before {
-        content: '';
-        position: absolute;
-        top: 28px;
-        left: 10%;
-        right: 10%;
-        height: 1px;
-        background: var(--border);
-        z-index: 0;
-      }
-    }
-    .process-step { position: relative; z-index: 1; }
-    .step-box {
-      width: 56px;
-      height: 56px;
-      display: flex;
+      gap: 10px;
       align-items: center;
-      justify-content: center;
-      background: var(--card);
-      border: 1px solid var(--border);
-      font-family: 'Clash Display', sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--accent);
-      margin-bottom: 20px;
     }
-    .process-step h3 {
-      font-family: 'Clash Display', sans-serif;
-      font-weight: 600;
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
-    .process-step p {
-      font-weight: 300;
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.7;
-      white-space: pre-line;
-    }
-
-    /* CTA */
-    .cta {
-      background: var(--section);
-      position: relative;
-      text-align: center;
-    }
-    .cta-inner {
-      position: relative;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-    .cta h2 {
-      font-size: 36px;
-      margin-bottom: 24px;
-    }
-    @media (min-width: 768px) {
-      .cta h2 { font-size: 56px; }
-    }
-    .cta p {
-      font-weight: 300;
-      font-size: 16px;
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 32px;
-      white-space: pre-line;
-    }
-    @media (min-width: 768px) {
-      .cta p { font-size: 17px; }
-    }
-    .cta-note {
-      margin-top: 18px;
-      font-weight: 300;
-      font-size: 13px;
-      color: var(--muted);
+    @media (min-width: 540px) {
+      .contact-btns { flex-direction: row; justify-content: center; flex-wrap: wrap; }
     }
 
     /* Footer */
     .footer {
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      padding: 36px 0;
-    }
-    @media (min-width: 768px) {
-      .footer { padding: 40px 0; }
+      padding: 32px 0;
+      border-top: 1px solid var(--line);
     }
     .footer-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 20px;
       display: flex;
       flex-direction: column;
+      gap: 12px;
       align-items: center;
-      gap: 20px;
       text-align: center;
     }
-    @media (min-width: 768px) {
+    @media (min-width: 700px) {
       .footer-inner {
         flex-direction: row;
         justify-content: space-between;
         text-align: left;
-        padding: 0 60px;
       }
     }
-    .footer-logo {
-      font-family: 'Clash Display', sans-serif;
-      font-weight: 600;
-      font-size: 15px;
+    .footer-copy {
+      font-size: 13px;
+      color: var(--muted);
     }
     .footer-links {
       display: flex;
-      gap: 28px;
+      gap: 24px;
       list-style: none;
-      flex-wrap: wrap;
-      justify-content: center;
     }
     .footer-links a {
       font-size: 13px;
-      font-weight: 400;
       color: var(--muted);
       transition: color 0.2s;
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
     }
     .footer-links a:hover { color: var(--text); }
-    .footer-right {
-      font-weight: 300;
-      font-size: 12px;
-      color: var(--muted);
-    }
 
-    /* Scroll reveal */
+    /* Reveal */
     .reveal {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-d1 { transition-delay: 0.1s; }
-    .reveal-d2 { transition-delay: 0.2s; }
-    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal.on { opacity: 1; transform: none; }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="nav" id="nav">
+  <nav class="nav">
     <div class="nav-inner">
-      <a href="#" class="logo">BM<span class="logo-dot">.</span></a>
+      <a href="#" class="nav-logo">Bamidele Matthew</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#case-studies">Case Studies</a></li>
         <li><a href="#process">Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#insights">Insights</a></li>
       </ul>
-      <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20work%20with%20you." class="btn btn-nav btn-nav-mobile nav-mob-cta" target="_blank" rel="noopener">Let's Talk</a>
-      <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20work%20with%20you." class="btn btn-nav nav-desk-cta" target="_blank" rel="noopener">Start a Project</a>
+      <a href="#contact" class="nav-cta">Book a Call</a>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <!-- Mobile photo (top) -->
-    <div class="hero-photo-mob">
-      <img src="images/hero.png" alt="Bamidele Matthew" width="800" height="640">
-      <div class="photo-badge">
-        <strong>CTO &amp; Co-Founder</strong>
-        <span>PromptEarn</span>
-      </div>
-    </div>
-
-    <div class="hero-grid">
-      <div class="hero-copy hero-copy-wrap">
-        <p class="hero-status hero-label"><span>Available</span> for new projects</p>
-        <h1 class="display">You have an idea.<br>I'll turn it into<br>something real.</h1>
-        <p class="hero-sub">I'm Bamidele, a builder and operator based in Lagos. I've taken products from zero to thousands of real users across Africa and beyond. If you need someone who understands your business, builds fast, and actually delivers, you're in the right place.</p>
-        <div class="hero-buttons">
-          <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20work%20with%20you." class="btn btn-primary" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Talk to Me on WhatsApp
-          </a>
-          <a href="#work" class="btn btn-secondary">
-            See My Work
-            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-          </a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <div class="stat-num" data-target="5" data-suffix="+">0+</div>
-            <div class="stat-label">Products shipped live</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num" data-target="195">0</div>
-            <div class="stat-label">Countries LeadThur reaches</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num" data-target="3" data-suffix="+">0+</div>
-            <div class="stat-label">Years building products</div>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Founder · Product Builder · Software Engineer</p>
+          <h1 class="h1">I build software products people actually use.</h1>
+          <p class="lead">Founder of PromptEarn. Over the last few years I've built products used by thousands of users and generated millions in transaction volume across multiple markets.</p>
+          <div class="btn-row">
+            <a href="#products" class="btn btn-primary">View Products</a>
+            <a href="#contact" class="btn btn-secondary">Book a Call</a>
           </div>
         </div>
-      </div>
-
-      <!-- Desktop photo -->
-      <div class="hero-photo-desk">
-        <div class="photo-frame">
-          <img src="images/hero.png" alt="Bamidele Matthew" width="420" height="525">
-        </div>
-        <div class="photo-badge">
-          <strong>CTO &amp; Co-Founder</strong>
-          <span>PromptEarn</span>
+        <div class="showcase reveal">
+          <div class="frame frame-back">
+            <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span></div>
+            <img src="images/adanalyzer.png" alt="AdAnalyzer product" width="400" height="300">
+          </div>
+          <div class="frame frame-mid">
+            <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span></div>
+            <img src="images/naira-invoice.png" alt="NairaInvoice product" width="500" height="350">
+          </div>
+          <div class="frame frame-main">
+            <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span></div>
+            <img src="images/leadthur.png" alt="LeadThur product" width="600" height="400">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Marquee -->
-  <div class="marquee-wrap" aria-hidden="true">
-    <div class="marquee">
-      <div class="marquee-track">
-        <span class="marquee-item">Next.js</span><span class="marquee-dot"></span>
-        <span class="marquee-item">TypeScript</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Node.js</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Supabase</span><span class="marquee-dot"></span>
-        <span class="marquee-item">PostgreSQL</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Paystack</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Flutterwave</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Python</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Docker</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Cloudflare Workers</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Vercel</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Coolify</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Telegram Bots</span><span class="marquee-dot"></span>
-        <span class="marquee-item">REST APIs</span><span class="marquee-dot"></span>
-        <span class="marquee-item">SaaS Architecture</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Mobile-First Design</span><span class="marquee-dot"></span>
-        <span class="marquee-item">AI Integration</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Webhook Systems</span><span class="marquee-dot"></span>
-      </div>
-      <div class="marquee-track">
-        <span class="marquee-item">Next.js</span><span class="marquee-dot"></span>
-        <span class="marquee-item">TypeScript</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Node.js</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Supabase</span><span class="marquee-dot"></span>
-        <span class="marquee-item">PostgreSQL</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Paystack</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Flutterwave</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Python</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Docker</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Cloudflare Workers</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Vercel</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Coolify</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Telegram Bots</span><span class="marquee-dot"></span>
-        <span class="marquee-item">REST APIs</span><span class="marquee-dot"></span>
-        <span class="marquee-item">SaaS Architecture</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Mobile-First Design</span><span class="marquee-dot"></span>
-        <span class="marquee-item">AI Integration</span><span class="marquee-dot"></span>
-        <span class="marquee-item">Webhook Systems</span><span class="marquee-dot"></span>
+  <div class="proof">
+    <div class="wrap">
+      <div class="proof-grid reveal">
+        <div>
+          <div class="proof-num"><span>$2M</span>+</div>
+          <div class="proof-label">Revenue generated across products</div>
+        </div>
+        <div>
+          <div class="proof-num">12<span>+</span></div>
+          <div class="proof-label">Products built and shipped live</div>
+        </div>
+        <div>
+          <div class="proof-num">50K<span>+</span></div>
+          <div class="proof-label">Users reached across platforms</div>
+        </div>
+        <div>
+          <div class="proof-num">4<span>+</span></div>
+          <div class="proof-label">Markets served including Nigeria, US, UK</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- About -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-copy">
-          <p class="label reveal">About</p>
-          <h2 class="display reveal reveal-d1">I build products.<br>I understand<br>businesses.</h2>
-          <p class="reveal reveal-d2">Most developers hand you code and leave. I stay involved because I've seen what happens when the person building your product doesn't understand what it's supposed to do for your business. I've been on both sides, as a founder and as a builder, and that changes how I approach every project.</p>
-          <p class="reveal reveal-d2">At PromptEarn, I was CTO and co-founder. I built the platform and helped steer the growth strategy. That experience taught me that the best products aren't just well-built. They're built with a clear understanding of who they're for and what they need to make those people do next.</p>
-          <p class="reveal reveal-d3">That's what I bring to your project.</p>
-        </div>
-        <div class="about-cards">
-          <div class="about-card reveal">
-            <h3>Fast without cutting corners</h3>
-            <p>A working MVP typically takes me 4 to 6 weeks. That's a real product: live, tested, and ready for users. Not a mockup.</p>
+  <section id="products">
+    <div class="wrap" style="padding-top: var(--section-y);">
+      <p class="eyebrow reveal">Featured Products</p>
+      <h2 class="h2 reveal">Software I've built, launched, and grown.</h2>
+      <p class="lead reveal">Each product below is live. Real users. Real payments. Real infrastructure behind it.</p>
+    </div>
+
+    <div class="product-block">
+      <div class="wrap">
+        <div class="product-block-inner reveal">
+          <div class="product-shot">
+            <img src="images/leadthur.png" alt="LeadThur" loading="lazy">
           </div>
-          <div class="about-card reveal reveal-d1">
-            <h3>I think about the whole picture</h3>
-            <p>Payment flows, user onboarding, affiliate systems, admin dashboards. I build these because I know they affect whether your product actually earns.</p>
-          </div>
-          <div class="about-card reveal reveal-d2">
-            <h3>You're never left wondering</h3>
-            <p>Weekly updates. Always reachable. When I take a project, I treat it like it's mine.</p>
+          <div>
+            <p class="eyebrow" style="margin-bottom:12px">Lead Generation SaaS</p>
+            <h3 class="h3">LeadThur</h3>
+            <p class="body-text">A global lead generation platform that finds real businesses with contact data in under 60 seconds. Works across 195 countries with full payment, affiliate, and admin systems built in.</p>
+            <div class="stat-row">
+              <div class="stat-item"><strong>195</strong><span>Countries supported</span></div>
+              <div class="stat-item"><strong>1,000+</strong><span>Leads per search</span></div>
+              <div class="stat-item"><strong>Full stack</strong><span>Role: Founder & builder</span></div>
+              <div class="stat-item"><strong>Live</strong><span>Paystack + Flutterwave</span></div>
+            </div>
+            <div class="product-meta">
+              <span class="tag">Next.js</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Playwright</span>
+              <span class="tag">Coolify</span>
+            </div>
+            <a href="https://www.leadthur.com" class="link-arrow" target="_blank" rel="noopener">Visit leadthur.com ↗</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Work -->
-  <section class="work" id="work">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="label">Recent Work</p>
-        <h2 class="display">Products I've built.<br>Every one of them is live.</h2>
-        <p class="section-note">Tap a project to visit the live site.</p>
-      </div>
-
-      <a href="https://www.leadthur.com" class="project-featured reveal" target="_blank" rel="noopener">
-        <div class="project-img">
-          <img src="images/leadthur.png" alt="LeadThur.com" loading="lazy">
-        </div>
-        <div class="project-body">
-          <p class="project-tagline">Lead generation · SaaS</p>
-          <h3>LeadThur.com</h3>
-          <p>Type any type of business and any city anywhere in the world. LeadThur finds you real businesses with their phone numbers, emails, websites, and ratings in under 60 seconds. It works across 195 countries and exports everything to a spreadsheet with one click.
-
-Built with a full payment system, affiliate program, admin dashboard, and automated emails. Every part of it, from the first line of code to the server it runs on, was built by me.</p>
-          <div class="tech-tags">
-            <span class="tech-tag">Next.js</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Supabase</span>
-            <span class="tech-tag">Paystack</span>
-            <span class="tech-tag">Flutterwave</span>
-            <span class="tech-tag">Playwright</span>
-            <span class="tech-tag">Coolify</span>
-          </div>
-          <span class="btn-site">View live site</span>
-        </div>
-      </a>
-
-      <div class="projects-grid">
-        <a href="https://naira-invoice.onrender.com/" class="project-card reveal" target="_blank" rel="noopener">
-          <div class="project-img">
+    <div class="product-block reverse">
+      <div class="wrap">
+        <div class="product-block-inner reveal">
+          <div class="product-shot">
             <img src="images/naira-invoice.png" alt="NairaInvoice" loading="lazy">
           </div>
-          <div class="project-body">
-            <h3>NairaInvoice</h3>
-            <p class="project-tagline">Invoicing · Fintech</p>
-            <p>A fast, clean invoicing tool for Nigerian freelancers and small businesses. Create a professional invoice in under a minute, send it by WhatsApp link, and track who has paid. Five invoice styles, PDF download, and a payment dashboard that shows exactly what you're owed.</p>
-            <div class="tech-tags">
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">Prisma</span>
-              <span class="tech-tag">PDFKit</span>
-              <span class="tech-tag">Vanilla JS</span>
+          <div>
+            <p class="eyebrow" style="margin-bottom:12px">Fintech · Invoicing</p>
+            <h3 class="h3">NairaInvoice</h3>
+            <p class="body-text">Invoicing software for Nigerian freelancers and SMBs. Create professional invoices in under a minute, share via WhatsApp, and track outstanding payments from a single dashboard.</p>
+            <div class="stat-row">
+              <div class="stat-item"><strong>&lt;60s</strong><span>Invoice creation time</span></div>
+              <div class="stat-item"><strong>5</strong><span>Invoice templates</span></div>
+              <div class="stat-item"><strong>PDF</strong><span>Export + share links</span></div>
+              <div class="stat-item"><strong>Live</strong><span>Role: Solo builder</span></div>
             </div>
-            <span class="btn-site">View live site</span>
+            <div class="product-meta">
+              <span class="tag">Node.js</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Prisma</span>
+              <span class="tag">PDFKit</span>
+            </div>
+            <a href="https://naira-invoice.onrender.com/" class="link-arrow" target="_blank" rel="noopener">Visit naira-invoice.com ↗</a>
           </div>
-        </a>
+        </div>
+      </div>
+    </div>
 
-        <a href="https://adanalyzer.pdigitalhq.com/" class="project-card reveal reveal-d1" target="_blank" rel="noopener">
-          <div class="project-img">
+    <div class="product-block">
+      <div class="wrap">
+        <div class="product-block-inner reveal">
+          <div class="product-shot">
             <img src="images/adanalyzer.png" alt="AdAnalyzer" loading="lazy">
           </div>
-          <div class="project-body">
-            <h3>AdAnalyzer</h3>
-            <p class="project-tagline">AI Tool · Marketing</p>
-            <p>Paste your Facebook or Instagram ad copy and get a full breakdown in under two minutes. It flags what's killing your reach, scores how well it fits the Nigerian market, checks for policy issues, and gives you a rewrite. Built for business owners who run their own ads.</p>
-            <div class="tech-tags">
-              <span class="tech-tag">Cloudflare Workers</span>
-              <span class="tech-tag">DeepSeek API</span>
-              <span class="tech-tag">Vanilla JS</span>
-              <span class="tech-tag">KV Storage</span>
+          <div>
+            <p class="eyebrow" style="margin-bottom:12px">AI · Marketing</p>
+            <h3 class="h3">AdAnalyzer</h3>
+            <p class="body-text">AI tool for Nigerian business owners running Meta ads. Paste ad copy, get a full breakdown on reach issues, market fit, policy risks, and a rewritten version in under two minutes.</p>
+            <div class="stat-row">
+              <div class="stat-item"><strong>Free</strong><span>Public access tier</span></div>
+              <div class="stat-item"><strong>~2 min</strong><span>Analysis time</span></div>
+              <div class="stat-item"><strong>Workers</strong><span>Edge deployment</span></div>
+              <div class="stat-item"><strong>Live</strong><span>Role: Solo builder</span></div>
             </div>
-            <span class="btn-site">View live site</span>
+            <div class="product-meta">
+              <span class="tag">Cloudflare Workers</span>
+              <span class="tag">DeepSeek API</span>
+              <span class="tag">KV Storage</span>
+            </div>
+            <a href="https://adanalyzer.pdigitalhq.com/" class="link-arrow" target="_blank" rel="noopener">Visit adanalyzer ↗</a>
           </div>
-        </a>
+        </div>
+      </div>
+    </div>
 
-        <a href="https://claude-clone-62wr.onrender.com/" class="project-card reveal" target="_blank" rel="noopener">
-          <div class="project-img">
-            <img src="images/claude-clone.png" alt="Claude Clone Naija Edition" loading="lazy">
+    <div class="product-block reverse">
+      <div class="wrap">
+        <div class="product-block-inner reveal">
+          <div class="product-shot">
+            <img src="images/ai-support.png" alt="AI Customer Support" loading="lazy">
           </div>
-          <div class="project-body">
-            <h3>Claude Clone, Naija Edition</h3>
-            <p class="project-tagline">AI App · Productivity</p>
-            <p>A fully working AI chat interface with three features built specifically for the Nigerian market. Naija Mode switches the AI to think in Nigerian context. The WhatsApp Reply Generator writes professional customer responses. The Content Generator produces ready-to-post content for six social platforms at once.</p>
-            <div class="tech-tags">
-              <span class="tech-tag">Claude API</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">HTML/CSS/JS</span>
-              <span class="tech-tag">Render</span>
+          <div>
+            <p class="eyebrow" style="margin-bottom:12px">AI · Customer Support</p>
+            <h3 class="h3">AI Customer Support</h3>
+            <p class="body-text">Production-grade support interface with voice input, quick replies, help center search, and light/dark mode. Built mobile-first to work as a real support channel, not a demo.</p>
+            <div class="product-meta">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">DeepSeek API</span>
+              <span class="tag">Vercel</span>
             </div>
-            <span class="btn-site">View live site</span>
+            <a href="https://ai-customer-support-seven-chi.vercel.app/" class="link-arrow" target="_blank" rel="noopener">View live demo ↗</a>
           </div>
-        </a>
-
-        <a href="https://t.me/addecisionbot" class="project-card reveal reveal-d1" target="_blank" rel="noopener">
-          <div class="project-img">
-            <img src="images/adley.png" alt="Adley Ads Advisor Bot" loading="lazy">
-          </div>
-          <div class="project-body">
-            <h3>Adley, Ads Advisor Bot</h3>
-            <p class="project-tagline">AI Bot · Telegram</p>
-            <p>A Telegram bot that works like a personal ads strategist. Send it your campaign data as a file and it tells you what to pause, what to push harder, and what to fix. It remembers your conversation history so every reply has full context. Deployed on a private server via Docker.</p>
-            <div class="tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Telegram API</span>
-              <span class="tech-tag">DeepSeek</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag">Coolify</span>
-            </div>
-            <span class="btn-site">View live site</span>
-          </div>
-        </a>
-
-        <a href="https://ai-customer-support-seven-chi.vercel.app/" class="project-card reveal" target="_blank" rel="noopener">
-          <div class="project-img">
-            <img src="images/ai-support.png" alt="AI Customer Support Chatbot" loading="lazy">
-          </div>
-          <div class="project-body">
-            <h3>AI Customer Support Chatbot</h3>
-            <p class="project-tagline">AI App · Support</p>
-            <p>A full support chat interface powered by AI. Voice input, quick reply buttons, help center search, light and dark mode. Built to feel like a real support channel, not a demo. Works on any device.</p>
-            <div class="tech-tags">
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Express</span>
-              <span class="tech-tag">DeepSeek API</span>
-              <span class="tech-tag">Web Speech API</span>
-              <span class="tech-tag">Vercel</span>
-            </div>
-            <span class="btn-site">View live site</span>
-          </div>
-        </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="stack" id="stack">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="label">Capabilities</p>
-        <h2 class="display">What I handle<br>for your product.</h2>
-        <p class="stack-sub">You don't need to understand the tools. You need to know your product is in good hands.</p>
+  <section id="case-studies" class="case-study section-line">
+    <div class="wrap">
+      <div class="case-header reveal">
+        <p class="eyebrow">Case Studies</p>
+        <h2 class="h2">How products were built, launched, and scaled.</h2>
+        <p class="lead">Documentation-style breakdowns. The kind of detail you'd expect before a partnership conversation.</p>
       </div>
-      <div class="cap-grid">
-        <div class="cap-item reveal">
+
+      <article class="reveal" style="margin-bottom:80px">
+        <p class="eyebrow" style="margin-bottom:12px">PromptEarn</p>
+        <h3 class="h3" style="font-size:28px;margin-bottom:24px">From zero to $2M in revenue in 12 months</h3>
+        <div class="case-grid">
+          <div>
+            <div class="case-block">
+              <h4>Challenge</h4>
+              <p>Build an affiliate platform in a competitive market with no existing user base, limited engineering resources, and pressure to generate revenue fast.</p>
+              <h4>Opportunity</h4>
+              <p>Africa's affiliate marketing space was growing but underserved by well-built, reliable platforms. Founders needed payouts, tracking, and onboarding that actually worked.</p>
+            </div>
+          </div>
+          <div>
+            <div class="case-block">
+              <h4>Solution</h4>
+              <p>Built the full platform as CTO and co-founder: affiliate tracking, payment flows, admin dashboards, email automation, and growth systems running in parallel with product development.</p>
+              <h4>Execution</h4>
+              <p>Owned engineering and growth simultaneously. Shipped weekly. Ran Meta campaigns, built landing pages, and iterated on conversion based on real user data.</p>
+            </div>
+          </div>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric"><strong>$2M+</strong><span>Revenue in 12 months</span></div>
+          <div class="case-metric"><strong>CTO</strong><span>Role: Co-founder</span></div>
+          <div class="case-metric"><strong>Full stack</strong><span>Platform + growth</span></div>
+          <div class="case-metric"><strong>Live</strong><span>Production system</span></div>
+        </div>
+        <div class="growth-bar">
+          <h4>Revenue growth trajectory</h4>
+          <div class="bar-chart">
+            <div class="bar" style="height:18%"></div>
+            <div class="bar" style="height:28%"></div>
+            <div class="bar" style="height:42%"></div>
+            <div class="bar" style="height:58%"></div>
+            <div class="bar" style="height:72%"></div>
+            <div class="bar fill" style="height:100%"></div>
+          </div>
+          <div class="bar-labels">
+            <span>M1</span><span>M3</span><span>M5</span><span>M7</span><span>M9</span><span>M12</span>
+          </div>
+        </div>
+        <div class="case-block" style="margin-top:32px">
+          <h4>Lessons learned</h4>
+          <p>Revenue follows product clarity. The fastest growth came when the offer, onboarding, and payout experience were aligned. Engineering speed only matters when it's pointed at what users will pay for.</p>
+        </div>
+      </article>
+
+      <article class="reveal">
+        <p class="eyebrow" style="margin-bottom:12px">LeadThur</p>
+        <h3 class="h3" style="font-size:28px;margin-bottom:24px">Building a global lead engine from scratch</h3>
+        <div class="case-grid">
+          <div>
+            <div class="case-block">
+              <h4>Challenge</h4>
+              <p>Sales teams and founders waste hours manually searching for business contact data. Existing tools were expensive, slow, or limited to specific regions.</p>
+              <h4>Opportunity</h4>
+              <p>A self-serve tool that returns 1,000+ verified business leads in 60 seconds, works in 195 countries, and monetizes through subscriptions and affiliates.</p>
+            </div>
+          </div>
+          <div>
+            <div class="case-block">
+              <h4>Solution</h4>
+              <p>Built the entire product solo: scraping pipeline with Playwright, search UI, payment in naira and dollars, affiliate system, admin dashboard, and automated email flows.</p>
+              <h4>Results</h4>
+              <p>Live product serving users globally. Full ownership of infrastructure on Coolify VPS with Supabase, Paystack, and Flutterwave integrated end to end.</p>
+            </div>
+          </div>
+        </div>
+        <div class="case-visual">
+          <img src="images/leadthur.png" alt="LeadThur dashboard" loading="lazy">
+        </div>
+        <div class="case-block" style="margin-top:32px">
+          <h4>Lessons learned</h4>
+          <p>Complex products need simple surfaces. Users don't care about the scraping pipeline. They care that it works fast, exports cleanly, and charges fairly.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="process" class="section-line">
+    <div class="wrap">
+      <p class="eyebrow reveal">Build Process</p>
+      <h2 class="h2 reveal">How I build products</h2>
+      <p class="lead reveal">A repeatable system for going from idea to live product with real users.</p>
+      <div class="process-list">
+        <div class="process-item active reveal">
+          <div class="process-num">01</div>
+          <h3>Research</h3>
+          <p>Understanding users and validating demand before writing code. I talk to the market first, not after.</p>
+        </div>
+        <div class="process-item reveal">
+          <div class="process-num">02</div>
+          <h3>Product Strategy</h3>
+          <p>Defining scope, positioning, and roadmap. What ships in v1, what waits, and what the business model looks like on day one.</p>
+        </div>
+        <div class="process-item reveal">
+          <div class="process-num">03</div>
+          <h3>Design</h3>
+          <p>Creating user experiences focused on adoption. Mobile-first layouts, clear flows, and interfaces that don't need a tutorial.</p>
+        </div>
+        <div class="process-item reveal">
+          <div class="process-num">04</div>
+          <h3>Development</h3>
+          <p>Building scalable production systems. Database design, payment integration, admin tools, and deployment from the start.</p>
+        </div>
+        <div class="process-item reveal">
+          <div class="process-num">05</div>
+          <h3>Launch</h3>
+          <p>Shipping fast and collecting feedback. Real users on real infrastructure within weeks, not months of hidden development.</p>
+        </div>
+        <div class="process-item reveal">
+          <div class="process-num">06</div>
+          <h3>Growth</h3>
+          <p>Iterating based on user behavior. Funnels, onboarding, retention, and the metrics that determine whether a product earns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" class="section-line" style="background:var(--surface)">
+    <div class="wrap">
+      <p class="eyebrow reveal">Engineering</p>
+      <h2 class="h2 reveal">Technology I ship with</h2>
+      <p class="lead reveal">Production tools chosen for reliability, speed, and scale. Not a resume skill list.</p>
+      <div class="tech-grid reveal">
+        <div class="tech-col">
           <h3>Frontend</h3>
-          <p>The screens your users see, click, and interact with. Fast, clean, and built for phones.</p>
+          <ul>
+            <li>Next.js</li>
+            <li>React</li>
+            <li>TypeScript</li>
+          </ul>
         </div>
-        <div class="cap-item reveal reveal-d1">
+        <div class="tech-col">
           <h3>Backend</h3>
-          <p>The logic running behind the scenes that makes your product actually work.</p>
+          <ul>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>PostgreSQL</li>
+          </ul>
         </div>
-        <div class="cap-item reveal reveal-d2">
-          <h3>Database</h3>
-          <p>Where your users, orders, and data live. Structured properly from day one.</p>
+        <div class="tech-col">
+          <h3>Infrastructure</h3>
+          <ul>
+            <li>Docker</li>
+            <li>AWS</li>
+            <li>Cloudflare</li>
+            <li>Vercel</li>
+          </ul>
         </div>
-        <div class="cap-item reveal">
-          <h3>Payments</h3>
-          <p>Paystack for Nigeria, Flutterwave and other international gateways for global payments. I wire up whatever your business needs, with webhooks and proper checks in place.</p>
-        </div>
-        <div class="cap-item reveal reveal-d1">
-          <h3>Deployment</h3>
-          <p>Your product goes live on Vercel, Coolify, or real infrastructure. Not just on my laptop.</p>
-        </div>
-        <div class="cap-item reveal reveal-d2">
-          <h3>AI Features</h3>
-          <p>Smart features your users will actually use. Nothing gimmicky.</p>
-        </div>
-        <div class="cap-item reveal">
-          <h3>Integrations</h3>
-          <p>Emails, WhatsApp flows, webhooks, affiliate systems. Everything connected.</p>
-        </div>
-        <div class="cap-item reveal reveal-d1">
-          <h3>Mobile-First</h3>
-          <p>Every product I build works properly on a phone. That's where your users are.</p>
-        </div>
-        <div class="cap-item reveal reveal-d2">
-          <h3>Full Ownership</h3>
-          <p>When I hand it over, the code is yours. No lock-in. No "only I can maintain this."</p>
+        <div class="tech-col">
+          <h3>AI</h3>
+          <ul>
+            <li>OpenAI</li>
+            <li>Anthropic</li>
+            <li>LangChain</li>
+            <li>Vector DBs</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Process -->
-  <section class="process" id="process">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="label">How It Works</p>
-        <h2 class="display">Simple process.<br>No surprises.</h2>
-        <p class="process-sub">Working with someone new on something this important
-should feel clear from the start. Here's what happens
-when you reach out.</p>
-      </div>
-      <div class="process-steps">
-        <div class="process-step reveal">
-          <div class="step-box">01</div>
-          <h3>We have one conversation</h3>
-          <p>You tell me about your idea. I ask the questions that
-help me understand what it needs to do, who it's for,
-and what success looks like for you. One call is
-usually enough.</p>
+  <section id="about" class="section-line">
+    <div class="wrap">
+      <div class="about-grid reveal">
+        <div class="about-photo">
+          <img src="images/hero.png" alt="Bamidele Matthew" width="320" height="400" loading="lazy">
         </div>
-        <div class="process-step reveal reveal-d1">
-          <div class="step-box">02</div>
-          <h3>I build it and keep you in the loop</h3>
-          <p>I handle everything: design, code, database, payments, deployment. You get a clear update every week. No disappearing. No surprises at the end.</p>
-        </div>
-        <div class="process-step reveal reveal-d2">
-          <div class="step-box">03</div>
-          <h3>You launch with full ownership</h3>
-          <p>Your product goes live. You get the full codebase,
-all the login details, and clear documentation.
-Everything is yours. If you need support after launch,
-I'm available for that too.</p>
+        <div>
+          <p class="eyebrow">About</p>
+          <h2 class="h2">Founder, engineer, operator.</h2>
+          <p class="body-text" style="margin-bottom:20px">I'm Bamidele Matthew, based in Lagos. I co-founded PromptEarn and served as CTO while scaling it to $2M in revenue within 12 months. Since then I've built and launched multiple SaaS products across fintech, AI, and lead generation.</p>
+          <p class="body-text">I don't just write code. I build the business systems around it: payments, onboarding, admin dashboards, affiliate programs, and the growth loops that turn a product into revenue.</p>
+          <div class="about-points">
+            <div class="about-point">
+              <strong>Products built</strong>
+              <p>LeadThur, NairaInvoice, AdAnalyzer, AI support tools, Telegram bots, and internal platforms at PromptEarn.</p>
+            </div>
+            <div class="about-point">
+              <strong>Businesses launched</strong>
+              <p>Co-founded PromptEarn. Built LeadThur and multiple independent SaaS products from zero to live.</p>
+            </div>
+            <div class="about-point">
+              <strong>Problems solved</strong>
+              <p>Lead generation at scale, invoicing for African SMBs, Meta ad optimization, customer support automation, and affiliate payout infrastructure.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta" id="contact">
-    <div class="container">
-      <div class="cta-inner reveal">
-        <p class="label">Get In Touch</p>
-        <h2 class="display">Ready to build<br>something real?</h2>
-        <p>If you have a product idea and you need someone you can trust to build it properly, send me a message. I work with founders who are serious about what they're building and ready to move.</p>
-        <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20my%20project." class="btn btn-whatsapp" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Send Me a Message on WhatsApp
+  <section id="insights" class="section-line">
+    <div class="wrap">
+      <p class="eyebrow reveal">Founder Journal</p>
+      <h2 class="h2 reveal">Recent insights</h2>
+      <p class="lead reveal">Notes from building products, launching SaaS, and learning what actually drives revenue.</p>
+      <div class="insight-list">
+        <a href="#contact" class="insight-item reveal">
+          <div class="insight-date">March 2026</div>
+          <h3>Lessons from building PromptEarn</h3>
+          <p>What $2M in 12 months taught me about product focus, payout reliability, and why growth and engineering can't be separate departments at early stage.</p>
         </a>
-        <p class="cta-note">+234 902 398 6992. Usually replies within a few hours.</p>
+        <a href="#contact" class="insight-item reveal">
+          <div class="insight-date">February 2026</div>
+          <h3>What I learned launching SaaS products solo</h3>
+          <p>Shipping fast without cutting corners on payments, onboarding, and the admin tools you'll need the week after launch.</p>
+        </a>
+        <a href="#contact" class="insight-item reveal">
+          <div class="insight-date">January 2026</div>
+          <h3>How I validate product ideas before writing code</h3>
+          <p>The questions I ask, the signals I look for, and the fastest way to know if someone will pay for what you're building.</p>
+        </a>
+        <a href="#contact" class="insight-item reveal">
+          <div class="insight-date">December 2025</div>
+          <h3>Designing products people pay for</h3>
+          <p>Why most MVPs fail after launch, and the product decisions that separate tools people try from tools people keep paying for.</p>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <section id="contact" class="contact section-line">
+    <div class="wrap reveal">
+      <h2 class="h2">Let's build something useful.</h2>
+      <p class="lead">Open to founder partnerships, product builds, and advisory work on products that need to ship and earn.</p>
+      <div class="contact-btns">
+        <a href="https://wa.me/2349023986992?text=Hi%20Bamidele%2C%20I%27d%20like%20to%20book%20a%20call%20about%20a%20project." class="btn btn-primary" target="_blank" rel="noopener">Book a Call</a>
+        <a href="mailto:hello@pdigitalhq.com" class="btn btn-secondary">Email Me</a>
+        <a href="https://wa.me/2349023986992" class="btn btn-secondary" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-logo">Bamidele Matthew<span class="logo-dot">.</span></div>
+    <div class="wrap footer-inner">
+      <div class="footer-copy">© 2026 Bamidele Matthew. Lagos, Nigeria.</div>
       <ul class="footer-links">
         <li><a href="https://x.com/BamsonOfficial" target="_blank" rel="noopener">Twitter/X</a></li>
         <li><a href="https://wa.me/2349023986992" target="_blank" rel="noopener">WhatsApp</a></li>
       </ul>
-      <div class="footer-right">Lagos, Nigeria. 2026</div>
     </div>
   </footer>
 
   <script>
-    // Nav scroll compression
-    const nav = document.getElementById('nav');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('on');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    document.querySelector('.nav').style.transition = 'border-color 0.3s';
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
+      document.querySelector('.nav').style.borderColor =
+        window.scrollY > 40 ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.08)';
     }, { passive: true });
-
-    // Scroll reveal
-    const revealEls = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    revealEls.forEach((el) => revealObserver.observe(el));
-
-    // Stat counters
-    let statsDone = false;
-    function runCounters() {
-      if (statsDone) return;
-      statsDone = true;
-      document.querySelectorAll('.stat-num').forEach((el) => {
-        const target = parseInt(el.dataset.target, 10);
-        const suffix = el.dataset.suffix || '';
-        const duration = 1500;
-        const start = performance.now();
-        function tick(now) {
-          const p = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = Math.round(eased * target) + suffix;
-          if (p < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-      });
-    }
-    const statsEl = document.querySelector('.hero-stats');
-    if (statsEl) {
-      const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            runCounters();
-            statsObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
-      statsObserver.observe(statsEl);
-    }
   </script>
 </body>
 </html>
